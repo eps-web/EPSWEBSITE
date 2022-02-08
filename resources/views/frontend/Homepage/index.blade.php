@@ -1,6 +1,6 @@
 @extends('frontend.layout.app')
 @section('title')
-EPS | Easy Payment System
+EPS | Easy Payment Systems
 @endsection
 
 @section('metadescription')
@@ -498,71 +498,12 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <!-- Single Blog -->
-                            <div class="single-blog wow fadeIn res-margin" data-wow-duration="2s">
-                                <!-- Blog Thumb -->
-                                <div class="blog-thumb">
-                                    <a href="#"><img src="{{ URL::to('') }}/frontend/assets/img/blog/blog-1.jpg" alt=""></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content p-4">
-                                    <!-- Meta Info -->
-                                    <ul class="meta-info d-flex justify-content-between">
-                                        <li>By <a href="#">EPS</a></li>
-                                        <li><a href="#">Nov 05, 2021</a></li>
-                                    </ul>
-                                    <!-- Blog Title -->
-                                    <h3 class="blog-title my-3"><a href="#">Instant Fund transfer between bank to bank is Limited</a></h3>
-                                    <p>Under this service, an account holder in a bank/MFS/e-wallet can send money from his/her account to a receiver’s bank/MFS/e-wallet account using EPS.</p>
-                                    <a href="#" class="blog-btn mt-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <!-- Single Blog -->
-                            <div class="single-blog wow fadeIn res-margin" data-wow-duration="2s" data-wow-delay="0.2s">
-                                <!-- Blog Thumb -->
-                                <div class="blog-thumb">
-                                    <a href="#"><img src="{{ URL::to('') }}/frontend/assets/img/blog/blog-2.jpg" alt=""></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content p-4">
-                                    <!-- Meta Info -->
-                                    <ul class="meta-info d-flex justify-content-between">
-                                        <li>By <a href="#">EPS</a></li>
-                                        <li><a href="#">Nov 01, 2021</a></li>
-                                    </ul>
-                                    <!-- Blog Title -->
-                                    <h3 class="blog-title my-3"><a href="#">Balance transfer, bill payment, etc. could be more cost effective</a></h3>
-                                    <p>Bill and Fee Payment: Using EPS App, the registered user will be able to pay bills and fees.</p>
-                                    <a href="#" class="blog-btn mt-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <!-- Single Blog -->
-                            <div class="single-blog wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
-                                <!-- Blog Thumb -->
-                                <div class="blog-thumb">
-                                    <a href="#"><img src="{{ URL::to('') }}/frontend/assets/img/blog/blog-3.jpg" alt=""></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content p-4">
-                                    <!-- Meta Info -->
-                                    <ul class="meta-info d-flex justify-content-between">
-                                        <li>By <a href="#">EPS</a></li>
-                                        <li><a href="#">Oct 25, 2021</a></li>
-                                    </ul>
-                                    <!-- Blog Title -->
-                                    <h3 class="blog-title my-3"><a href="#">Current online banking system is highly dependent on NPSB</a></h3>
-                                    <p>EPS will provide one-stop solution for the corporate clients dealing with large number of transactions. Easy Wage Disbursement is one of such services to be availed from EPS.</p>
-                                    <a href="#" class="blog-btn mt-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+
+                    <div class="row justify-content-center" id="posts" data-wow-duration="2s">
+
                     </div>
+
+
                 </div>
             </section>
             <!-- ***** Blog Area End ***** -->
@@ -593,3 +534,38 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
             </section>
 
 @endsection
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="admin/assets/js/moment.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'https://blog.eps.com.bd/wp-json/wp/v2/posts?categories=26&per_page=3&orderby=id',
+
+            success: function (data) {
+                var posts_html = '';
+
+
+                $.each(data, function (index, post) {
+                    posts_html +=  '<div class=" card single-blog wow fadeIn " style="width:360px;margin-left:15px" ><img style="border-radius:5px 5px 0px 0px" src="' + post.yoast_head_json.og_image[0].url + '" alt="activity-6">';
+                        posts_html += '<a href="' + post.link + '"><h3 style="margin:10px 15px 0px">' + post.title.rendered + '</h3></a>';
+                    posts_html +=  '<p style="margin:0px 15px 0px"><span style="">' + post.yoast_head_json.twitter_misc["Written by"] + '</span>';
+                        posts_html += '<span> | </span>';
+                    posts_html += '<span>' + moment(post.date).format('LL'); + '</span></p>';
+                    posts_html +='<h4 class="pst" style="margin:10px 15px 20px">' + post.excerpt.rendered.slice(0,120)+ '</h4>';
+                    posts_html += '<a href="' + post.link + '" style="margin:10px 15px 10px">Read More >></a></div>'
+
+
+                });
+                $('#posts').html(posts_html);
+
+            },
+
+
+            error: function (request, status, error) {
+                alert(error);
+            }
+        });
+    });
+</script>
