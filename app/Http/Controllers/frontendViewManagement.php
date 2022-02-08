@@ -57,6 +57,11 @@ class frontendViewManagement extends Controller
     }
 
 
+// FAq Section
+
+    public function faqInfo(){
+        return view('frontend.faq');
+    }
 
 
 

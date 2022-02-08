@@ -58,7 +58,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="index.html#features">FAQ</a>
+                            <a class="nav-link scroll" href="{{ route('frontend.faq') }}">FAQ</a>
                         </li>
 
 

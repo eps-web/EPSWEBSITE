@@ -44,6 +44,12 @@ Route::get('/enhance-banking',[App\Http\Controllers\frontendViewManagement::clas
 Route::get('/marchant-payment',[App\Http\Controllers\frontendViewManagement::class,'marchentPayment']) -> name('frontend.marchent-payment');
 //Contact Section
 Route::get('/contact',[App\Http\Controllers\frontendViewManagement::class,'contactsInfo']) -> name('frontend.contact');
+
+//faq section
+
+Route::get('/faq',[App\Http\Controllers\frontendViewManagement::class,'faqInfo']) -> name('frontend.faq');
+
+// end faq section
 Route::get('/blogSingleView/{id}',[App\Http\Controllers\frontendViewManagement::class,'Blog_single_view']);
 
 
