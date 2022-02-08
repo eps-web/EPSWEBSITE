@@ -2,6 +2,9 @@
 <html class="no-js" lang="en">
 
 <head>
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('metadescription')">
+
    @include('frontend.layout.partials.header')
 
 </head>

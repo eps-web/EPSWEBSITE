@@ -1,4 +1,12 @@
 @extends('frontend.layout.app')
+@section('title')
+EPS | Easy Payment System
+@endsection
+
+@section('metadescription')
+Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services
+ including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.
+@endsection
 
 @section('main-content')
 

@@ -34,8 +34,16 @@ Route::resource('post','App\Http\Controllers\postController');
 //Frontend vierw Management
 Route::get('/frontpage',[App\Http\Controllers\frontendViewManagement::class,'HomePage'])->name('fhome');
 Route::get('/',[App\Http\Controllers\frontendViewManagement::class,'HomePageManage']);
-Route::get('/blog',[App\Http\Controllers\frontendViewManagement::class,'blogview']);
-Route::get('/contact',[App\Http\Controllers\frontendViewManagement::class,'contactsInfo']);
+//Services Section
+Route::get('/balance-transfer',[App\Http\Controllers\frontendViewManagement::class,'Balance_transfer']) -> name('frontend.balance_transfer');
+Route::get('/bill-and-fee-payment',[App\Http\Controllers\frontendViewManagement::class,'Bill_and_Fee_payment']) -> name('frontend.billandfee');
+Route::get('/balance-enquiry',[App\Http\Controllers\frontendViewManagement::class,'balanceEnquiry']) -> name('frontend.balance-enquiry');
+Route::get('/corporate-service',[App\Http\Controllers\frontendViewManagement::class,'corporateService']) -> name('frontend.corporate-service');
+Route::get('/mobile-topup',[App\Http\Controllers\frontendViewManagement::class,'mobileTopup']) -> name('frontend.mobile-top-up');
+Route::get('/enhance-banking',[App\Http\Controllers\frontendViewManagement::class,'enhanceBanking']) -> name('frontend.enhance-Banking');
+Route::get('/marchant-payment',[App\Http\Controllers\frontendViewManagement::class,'marchentPayment']) -> name('frontend.marchent-payment');
+//Contact Section
+Route::get('/contact',[App\Http\Controllers\frontendViewManagement::class,'contactsInfo']) -> name('frontend.contact');
 Route::get('/blogSingleView/{id}',[App\Http\Controllers\frontendViewManagement::class,'Blog_single_view']);
 
 

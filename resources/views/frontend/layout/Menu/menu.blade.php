@@ -14,7 +14,7 @@
                     <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="index.html#home">Home</a>
+                            <a class="nav-link scroll" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
@@ -24,20 +24,20 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <ul class="single-menu">
-                                            <li><a class="dropdown-item" href="balance-transfer.html">Balance Transfer</a></li>
-                                            <li><a class="dropdown-item" href="bill-fee-payment.html">Bill and Fee Payment</a></li>
-                                            <li><a class="dropdown-item" href="merchant-payment.html">Merchant Payment</a></li>
-                                            <li><a class="dropdown-item" href="balance-enquiry.html">Balance Enquiry</a></li>
-                                            <li><a class="dropdown-item" href="mobile-topup.html">Mobile Top-up</a></li>
-                                            <li><a class="dropdown-item" href="corporate-services.html">Corporate Services</a></li>
-                                            <li><a class="dropdown-item" href="enhancing-banking-services.html">Enhancing Banking Services</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.balance_transfer') }}">Balance Transfer</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.billandfee') }}">Bill and Fee Payment</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.marchent-payment') }}">Merchant Payment</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.balance-enquiry') }}">Balance Enquiry</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.mobile-top-up') }}">Mobile Top-up</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.corporate-service') }}">Corporate Services</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('frontend.enhance-Banking') }}">Enhancing Banking Services</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
+                     {{--    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
                                 Registration
                             </a>
@@ -51,30 +51,20 @@
                                     </div>
                                 </div>
                             </div>
+                        </li> --}}
+
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="https://blog.eps.com.bd/">blog</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="index.html#features">Features</a>
+                            <a class="nav-link scroll" href="index.html#features">FAQ</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
-                                App Support
-                            </a>
-                            <div class="dropdown-menu mega-menu blog-menu px-3 py-md-3">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <ul class="single-menu">
-                                            <li><a class="dropdown-item" href="ios-app-support.html">For iOS</a></li>
-                                            <li><a class="dropdown-item" href="android-app-support.html">For Android</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">Contact us</a>
+                            <a class="nav-link" href="{{ route('frontend.contact') }}">Contact us</a>
                         </li>
                     </ul>
                 </div>

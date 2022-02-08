@@ -19,19 +19,8 @@ class frontendViewManagement extends Controller
         $st=settings::find(1);
         return view('frontend.Homepage.index');
     }
-    public function Blogview(){
-       $p= post::latest()->paginate(6);
-       return view('frontend.blog',[
-        'blog'=> $p,
-       ]);
-    }
 
-    public function Blog_single_view($id){
-        $p=post::find($id);
-        return view('frontend.single_blog',[
-            'blogs' => $p,
-        ]);
-     }
+
 
      public function contactsInfo(){
         $st=settings::find(1);
@@ -39,40 +28,38 @@ class frontendViewManagement extends Controller
             'settings' =>$st,
         ]);
      }
-
-     // blog serach View by tag
-
-     public function Blog_search_by_category($slug){
-       $cat = category::where('slug',$slug)->first();
-      $blog= post::where('category',$cat->id)->paginate(6);
-
-        return view('frontend.blog_search_category',compact('blog'));
+// Services Section
+     public function Balance_transfer(){
+         return view('frontend.services.balance-transfer');
      }
 
-      // blog serach View by tag
+     public function Bill_and_Fee_payment(){
+        return view('frontend.services.bill-and-fee');
+    }
+     public function marchentPayment(){
+        return view('frontend.services.merchant');
+    }
 
-      public function Blog_search_by_tag($slug){
-        $tag = Tag::where('slug',$slug)->first();
-        if($tag){
-            $blog = $tag ->posts()->orderBy('created_at','desc')->paginate(1);
-            return view('frontend.blog_search_tag',compact('blog'));
-        }
-        else{
-            return redirect()->route('fhome');
-        }
+    public function balanceEnquiry(){
+        return view('frontend.services.balance-enquiry');
+    }
+
+    public function corporateService(){
+        return view('frontend.services.corporate-service');
+    }
+
+    public function mobileTopup(){
+        return view('frontend.services.mobile-top-up');
+    }
+
+    public function enhanceBanking(){
+        return view('frontend.services.enhancing-banking');
+    }
 
 
 
 
-      }
 
-      //blog search
 
-      public function BlogSearch(Request $request){
-          $search_text = $request->search;
-           $blog= post::where('title','like','%'.$search_text.'%')/* ->orWhere('description','like','%'.$search_text.'%') */->paginate(6);
-
-           return view('frontend.blog_search',compact('blog'));
-      }
 
 }
