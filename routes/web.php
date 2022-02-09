@@ -49,7 +49,19 @@ Route::get('/contact',[App\Http\Controllers\frontendViewManagement::class,'conta
 
 Route::get('/faq',[App\Http\Controllers\frontendViewManagement::class,'faqInfo']) -> name('frontend.faq');
 
-// end faq section
+
+//Footer
+
+Route::get('/about-us',[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
+Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::class,'ServiceDetails']) -> name('frontend.service_details');
+Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
+
+
+
+
+
+
+// blog single view
 Route::get('/blogSingleView/{id}',[App\Http\Controllers\frontendViewManagement::class,'Blog_single_view']);
 
 

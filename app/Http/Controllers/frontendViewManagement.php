@@ -63,6 +63,20 @@ class frontendViewManagement extends Controller
         return view('frontend.faq');
     }
 
+// Footer Menu Item
+
+public function AboutUs(){
+    return view('frontend.FooterMenus.about_us');
+}
+
+public function ServiceDetails(){
+    return view('frontend.FooterMenus.service-details');
+}
+
+public function Career(){
+    return view('frontend.FooterMenus.career');
+}
+
 
 
 

@@ -35,10 +35,10 @@
                         <!-- Footer Title -->
                         <h3 class="footer-title text-white mb-2">Useful Links</h3>
                         <ul>
-                            <li class="py-2"><a class="text-white-50" href="about-us.html">About Us</a></li>
-                            <li class="py-2"><a class="text-white-50" href="service-details">Service Details</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('frontend.aboutUs') }}">About Us</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('frontend.service_details') }}">Service Details</a></li>
                             <li class="py-2"><a class="text-white-50" href="blogs.html">Blog</a></li>
-                            <li class="py-2"><a class="text-white-50" href="careers.html">Career</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{route('frontend.career') }}">Career</a></li>
                             <li class="py-2"><a class="text-white-50" href="contact-us.html">Contact Us</a></li>
                         </ul>
                     </div>
