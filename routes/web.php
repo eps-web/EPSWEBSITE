@@ -57,6 +57,9 @@ Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::clas
 Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
 
 
+//privacy policy
+
+Route::get('/privacy-policy',[App\Http\Controllers\frontendViewManagement::class,'PrivacyPolicy']) -> name('frontend.privacy');
 
 
 

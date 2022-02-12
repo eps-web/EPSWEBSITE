@@ -39,7 +39,7 @@
                             <li class="py-2"><a class="text-white-50" href="{{ route('frontend.service_details') }}">Service Details</a></li>
                             <li class="py-2"><a class="text-white-50" href="https://blog.eps.com.bd/">Blog</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{route('frontend.career') }}">Career</a></li>
-                            <li class="py-2"><a class="text-white-50" href="contact-us.html">Contact Us</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('frontend.contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,9 +50,9 @@
                         <h3 class="footer-title text-white mb-2">Product Help</h3>
                         <ul>
                             <li class="py-2">
-                                <a class="text-white-50" href="faqs.html">FAQ</a>
+                                <a class="text-white-50" href="{{ route('frontend.faq') }}">FAQ</a>
                             </li>
-                            <li class="py-2"><a class="text-white-50" href="privacy-policy.html">Privacy Policy</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('frontend.privacy') }}">Privacy Policy</a></li>
                             <li class="py-2"><a class="text-white-50" href="terms-conditions.html">Terms &amp; Conditions</a></li>
                             <li class="py-2"><a class="text-white-50" href="site-map.html">Site Map</a></li>
                             <li class="py-2"><a class="text-white-50" href="cookie-policy.html">Cookie Policy</a></li>

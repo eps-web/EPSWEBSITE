@@ -77,7 +77,9 @@ public function Career(){
     return view('frontend.FooterMenus.career');
 }
 
-
+public function PrivacyPolicy(){
+    return view('frontend.FooterMenus.privacy');
+}
 
 
 
