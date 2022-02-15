@@ -972,6 +972,9 @@ a,
     left: 0;
     z-index: 100;
 }
+/* ******************************
+fixed header
+****************************** */
 .sticky {
     position: fixed;
     width: 100%;

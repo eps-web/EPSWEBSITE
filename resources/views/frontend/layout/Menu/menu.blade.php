@@ -72,7 +72,7 @@
         </div>
     </div>
 </header>
-<!--script for fixed menu!-->
+<!--jscript for fixed menu!-->
 <script>
 window.onscroll = function() {myFunction()};
 
