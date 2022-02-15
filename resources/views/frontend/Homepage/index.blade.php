@@ -511,25 +511,18 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
 
 
             <!--====== Contact Area Start ======-->
-            <section id="contact" class="contact-area bg-gray ptb_100">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-6">
-                            <!-- Section Heading -->
-                            <div class="section-heading text-center">
-                                <h2 class="text-capitalize">Google Map</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Contact Box -->
-                            <div class="contact-box text-center">
-                                <!-- Contact Form -->
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7296.864314685775!2d90.38540015334223!3d23.87428970530401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c511c384e35b%3A0xd35fc861ef0c04ba!2sEPS%20-%20Easy%20Payment%20System!5e0!3m2!1sen!2sbd!4v1642668716700!5m2!1sen!2sbd" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                        </div>
-                    </div>
+            <section id="contact" class="bg-gray ptb_00">
+                <div class=" " >
+
+
+
+                <!-- Contact Box -->
+
+                <!-- Contact Form -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7296.864314685775!2d90.38540015334223!3d23.87428970530401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c511c384e35b%3A0xd35fc861ef0c04ba!2sEPS%20-%20Easy%20Payment%20System!5e0!3m2!1sen!2sbd!4v1642668716700!5m2!1sen!2sbd" width="100%" height="400" style="border:0px;" allowfullscreen=true loading="lazy"></iframe>
+
+
+
                 </div>
             </section>
 
