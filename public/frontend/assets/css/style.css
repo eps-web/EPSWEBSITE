@@ -965,12 +965,12 @@ a,
 :: 7.0 HEADER AREA CSS
 ****************************** */
 .header {
-    position: absolute;
-    height: 90px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  position: absolute;
+  height: 90px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 .sticky {
     position: fixed;
