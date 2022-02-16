@@ -1,5 +1,5 @@
 <header class="section header-area">
-    <div id="appo-header" class="main-header-area">
+    <div id="appo-header" class="header sticky">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
@@ -72,3 +72,17 @@
         </div>
     </div>
 </header>
+<!--script for fixed menu!-->
+<script>
+window.onscroll = function() {myFunction()};
+var header = document.getElementById("appo-header");
+var sticky = header.offsetTop;
+function myFunction(){
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+</script>
