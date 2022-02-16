@@ -16,7 +16,7 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                      {{--   <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
                                 Services
                             </a>
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
 
                      {{--    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
