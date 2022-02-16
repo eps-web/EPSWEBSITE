@@ -53,9 +53,9 @@
                             </div>
                         </li> --}}
 
-                        <li class="nav-item">
+                       {{--  <li class="nav-item">
                             <a class="nav-link scroll" href="https://blog.eps.com.bd/">blog</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ route('frontend.faq') }}">FAQ</a>
