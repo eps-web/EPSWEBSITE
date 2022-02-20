@@ -17,12 +17,12 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <!-- Welcome Intro Start -->
                         <div class="col-12 col-md-7 col-lg-6">
                             <div class="welcome-intro">
-                                <h1>EPS</h1>
-                                <h3 class="fw-3 mt-2 mt-sm-3">Easy Payment System</h3>
-                                <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
+                                <h1 style="font-size:36px">Easy Payment System - EPS</h1>
+                                <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
+                                <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution.</p>
                                 <div class="button-group">
                                     <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
+                                    <a href="{{ route('frontend.aboutUs') }}"   class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -233,9 +233,10 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                 <!-- Headings -->
                                 <div class="headings d-flex align-items-center mb-4">
                                     <span class="text-uppercase d-none d-sm-block">Features</span>
-                                    <h2 class="text-capitalize">EPS Is The Only All In One Payment System To Do Any Kind Of Transaction</h2>
+                                    <h2 class="text-capitalize">Accelerating the wind of change in Digital Transaction Platforms</h2>
                                 </div>
-                                <p class="my-3">VISION To accelerate the transformation to achieve a sustainable digital financial eco-system. MISSION To minimize the barriers of digital transaction, and support financial institutions by facilitating their customers/clients with digital payment services.</p>
+                                <p class="my-3">Our vision is to accelerate a transformation to achieve a sustainable digital financial ecosystem. The growth of transactions in Bangladesh shows how we are progressing towards a digital era of Finance. EPS aims to accelerate this enormous pace in order to
+                                     embrace the digital transaction revolution.</p>
                                 <!-- Counter List -->
                                 <!--<div class="counter-list">
                                     <ul>
@@ -499,7 +500,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         </div>
                     </div>
 
-                    {{-- <div class="row justify-content-center" id="posts" data-wow-duration="2s"> --}}
+                    <div class="row justify-content-center" id="posts" data-wow-duration="2s">
 
                     </div>
 
@@ -534,7 +535,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
     $(document).ready(function () {
         $.ajax({
             type: 'GET',
-            url: 'https://blog.eps.com.bd/wp-json/wp/v2/posts?categories=26&per_page=3&orderby=id',
+            url: 'https://eps.com.bd/blog/wp-json/wp/v2/posts?categories=26&per_page=3&orderby=id',
 
             success: function (data) {
                 var posts_html = '';

@@ -52,7 +52,7 @@ Route::get('/faq',[App\Http\Controllers\frontendViewManagement::class,'faqInfo']
 
 //Footer
 
-Route::get('/about-us',[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
+Route::get('/about-EPS',[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
 Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::class,'ServiceDetails']) -> name('frontend.service_details');
 Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
 
@@ -66,6 +66,7 @@ Route::get('/privacy-policy',[App\Http\Controllers\frontendViewManagement::class
 
 // blog single view
 Route::get('/blogSingleView/{id}',[App\Http\Controllers\frontendViewManagement::class,'Blog_single_view']);
+
 
 
 
