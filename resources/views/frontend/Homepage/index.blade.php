@@ -51,23 +51,23 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852164.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/User-friendly.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">User Friendly</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">User Friendly</h3>
                                     <p>User friendly interface will be ensuring an optimum interaction between users and services.</p>
                                 </div>
                             </div>
                         </div>
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
-                            <div class="benifits-item text-center p-3">
+                            <div class="benifits-item text-center p-3 ">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852391.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/Notification.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">Instant Notification</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">Instant Notification</h3>
                                     <p>Instant Transaction Notification will be provided through SMS and E-mail.</p>
                                 </div>
                             </div>
@@ -75,11 +75,11 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852623.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/security.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">Anti-fraud measures</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">Anti-fraud measures</h3>
                                     <p>EPS will ensure strong measurement to protect database of each and every parties regarding the
         services.</p>
                                 </div>
@@ -88,11 +88,11 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852907.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/support.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">24/7 Support</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">24/7 Support</h3>
                                     <p>EPS is designed to provide 24/7 customer support, any issue will be resolved no matter what day or time it is.</p>
                                 </div>
                             </div>
