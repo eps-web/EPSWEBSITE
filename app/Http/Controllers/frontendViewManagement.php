@@ -81,6 +81,8 @@ public function PrivacyPolicy(){
     return view('frontend.FooterMenus.privacy');
 }
 
-
+public function TermsAndCondition(){
+    return view('frontend.FooterMenus.terms-condition');
+}
 
 }

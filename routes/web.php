@@ -60,6 +60,10 @@ Route::get($a ,[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -
 Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::class,'ServiceDetails']) -> name('frontend.service_details');
 Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
 
+//Terms & Condition
+
+Route::get('/terms-and-condition-of-eps',[App\Http\Controllers\frontendViewManagement::class,'TermsAndCondition']) -> name('frontend.terms');
+
 
 //privacy policy
 
