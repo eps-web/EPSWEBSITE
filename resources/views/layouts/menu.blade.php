@@ -39,6 +39,10 @@
 
                         </ul>
                     </li>
+
+                    <li class="{{Route::currentRouteName()=='pageSeo' }} ? 'active':'' }}">
+                        <a href="{{route('pageseo.index')}}"><i class="fas fa-tachometer-alt"></i> <span>Page SEO</span></a>
+                    </li>
      @endif
 
      @if ((Auth::user()->user_role == 'editor'))
@@ -65,7 +69,6 @@
 
         </ul>
     </li>
-
      @endif
 
 

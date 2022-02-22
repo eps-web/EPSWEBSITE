@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\PageSeo;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +21,10 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 
-
-
+$a = "shajedul";
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 //post Management
@@ -52,7 +56,7 @@ Route::get('/faq',[App\Http\Controllers\frontendViewManagement::class,'faqInfo']
 
 //Footer
 
-Route::get('/about-EPS',[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
+Route::get($a ,[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
 Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::class,'ServiceDetails']) -> name('frontend.service_details');
 Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
 
@@ -93,3 +97,10 @@ Route::group(['middleware' =>'commentor'],function(){
 Route::resource('user','App\Http\Controllers\UserManagement');
 
     });
+
+
+    // SEO Section
+
+    Route::resource('/pageseo','App\Http\Controllers\PageSeoController');
+
+

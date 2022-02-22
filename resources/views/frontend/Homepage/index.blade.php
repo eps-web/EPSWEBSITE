@@ -492,15 +492,15 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <!-- Section Heading -->
                         <div class="col-12 col-md-10 col-lg-6">
                             <!-- Section Heading -->
-                            <div class="section-heading text-center">
+                           {{--  <div class="section-heading text-center">
                                 <h2 class="text-capitalize">Financial News</h2>
                                 <p class="d-none d-sm-block mt-4">Online payment gateways cannot accept money directly from a bank account if it is not connected with debit-credit card/internet banking.</p>
                                 <p class="d-block d-sm-none mt-4">Current online banking system is highly dependent on NPSB by Bangladesh Bank (Not all the banks are connected yet)</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
-                    <div class="row justify-content-center" id="posts" data-wow-duration="2s">
+                    {{-- <div class="row justify-content-center" id="posts" data-wow-duration="2s"> --}}
 
                     </div>
 
