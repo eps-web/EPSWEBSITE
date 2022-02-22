@@ -19,10 +19,22 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                             <div class="welcome-intro">
                                 <h1 style="font-size:36px">Easy Payment System - EPS</h1>
                                 <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
-                                <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution.</p>
-                                <div class="button-group">
+                                <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution... <a style="font-weight: 600;" href="https://eps.com.bd/about-eps">Read More</a></p>
+                              {{--   <div class="button-group">
                                     <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
                                     <a href="{{ route('frontend.aboutUs') }}"   class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
+                                </div> --}}
+                                <div class="button-group store-buttons">
+                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                        <p class="dsp-tc">GET IT ON
+                                            <br> <span>Google Play</span></p>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                        <p class="dsp-tc">AVAILABLE ON
+                                            <br> <span>Apple Store</span></p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -452,7 +464,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
             <section class="section download-area ptb_100">
                 <!-- Shapes Container -->
                 <div class="shapes-container d-none d-sm-block">
-                    <div class="shape-2"></div>
+                    <div class="shape-2" style="border-color:#EE2C43"></div>
                     <div class="shape-3"></div>
                 </div>
                 <div class="container">

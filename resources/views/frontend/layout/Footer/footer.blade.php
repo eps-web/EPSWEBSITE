@@ -54,8 +54,8 @@
                             </li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('frontend.privacy') }}">Privacy Policy</a></li>
                             <li class="py-2"><a class="text-white-50" href="{{ route('frontend.terms') }}">Terms &amp; Conditions</a></li>
-                            <li class="py-2"><a class="text-white-50" href="site-map.html">Site Map</a></li>
-                            <li class="py-2"><a class="text-white-50" href="cookie-policy.html">Cookie Policy</a></li>
+                            <li class="py-2"><a class="text-white-50" href="/sitemap.html">Site Map</a></li>
+                            <li class="py-2"><a class="text-white-50" href="{{ route('frontend.cookie') }}">Cookie Policy</a></li>
                         </ul>
                     </div>
                 </div>

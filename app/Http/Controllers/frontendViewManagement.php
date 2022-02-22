@@ -85,4 +85,9 @@ public function TermsAndCondition(){
     return view('frontend.FooterMenus.terms-condition');
 }
 
+public function Cookie(){
+    return view('frontend.FooterMenus.cookie');
+}
+
+
 }

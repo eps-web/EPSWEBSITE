@@ -70,6 +70,13 @@ Route::get('/terms-and-condition-of-eps',[App\Http\Controllers\frontendViewManag
 Route::get('/privacy-policy',[App\Http\Controllers\frontendViewManagement::class,'PrivacyPolicy']) -> name('frontend.privacy');
 
 
+//Cookie policy
+
+Route::get('/cookie',[App\Http\Controllers\frontendViewManagement::class,'Cookie']) -> name('frontend.cookie');
+
+
+
+
 
 
 // blog single view
