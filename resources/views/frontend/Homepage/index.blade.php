@@ -17,7 +17,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <!-- Welcome Intro Start -->
                         <div class="col-12 col-md-9 col-lg-6">
                             <div class="welcome-intro">
-                                <h1 style="font-size:36px">Easy Payment System - EPS</h1>
+                                <h1 class="respon">Easy Payment System - EPS</h1>
                                 <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
                                 <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution... <a style="font-weight: 600;" href="https://eps.com.bd/about-eps">Read More</a></p>
                               {{--   <div class="button-group">
@@ -41,7 +41,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <div class="col-12 col-md-3 col-lg-6">
                             <!-- Welcome Thumb -->
                             {{-- <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> --}}
-                                <img style="margin-top:130px; margin-left:100px; height:500px" src="{{ URL::to('') }}/frontend/images/web2.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                                <img style="margin-top:130px; height:500px" class="mobimg" src="{{ URL::to('') }}/frontend/images/web2.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
                                 {{-- <img style="margin-left:200px; width:280px" src="{{ URL::to('') }}/frontend/images/mobile-slider.png" alt=""> --}}
 
             {{-- <img src="{{ URL::to('/') }}/frontend/images/666.1.gif" alt="Test" style="margin-top:-485px ; width:234px; border:none; margin-left:226px; height:415px"> --}}

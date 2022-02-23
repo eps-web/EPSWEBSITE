@@ -1206,6 +1206,37 @@ a,
     font-size: 20px;
 }
 
+.mobimg{
+    margin-left: 100px;
+}
+
+.respon{
+    font-size: 36px;
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .respon{
+        margin-top: 300px;
+        font-size: 20px;
+
+    }
+
+
+
+
+
+    .mobimg{
+        margin-left: 0px;
+
+    }
+
+    .benifits-area{
+        margin-top: 300px;
+    }
+  }
+
 @-webkit-keyframes grow {
     0% {
         -webkit-transform: scale(1, 1);
