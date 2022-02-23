@@ -821,7 +821,7 @@ a,
 
 /*BACKGROUND IMAGES*/
 .welcome-area {
-    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-main.png") no-repeat scroll center center / cover;
+    /* background: rgba(0, 0, 0, 0) url("../img/bg/welcome-main.png") no-repeat scroll center center / cover; */
 }
 
 .seoul .welcome-area {

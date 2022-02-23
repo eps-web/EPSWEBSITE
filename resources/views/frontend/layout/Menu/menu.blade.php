@@ -1,5 +1,5 @@
 <header class="section header-area">
-    <div id="appo-header" class="header sticky">
+    <div id="appo-header" class="header">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
                 <!-- Logo -->

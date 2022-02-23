@@ -41,14 +41,17 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <div class="col-12 col-md-5 col-lg-6">
                             <!-- Welcome Thumb -->
                             <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                <img src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
+                                <img style="margin" src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
+
+            {{-- <img src="{{ URL::to('/') }}/frontend/images/21.gif" alt="Test"> --}}
+
                             </div>
                             <!-- Video Icon -->
-                            <div class="video-icon d-none d-lg-block">
+                           {{--  <div class="video-icon d-none d-lg-block">
                                 <a class="play-btn" data-fancybox href="https://www.youtube.com/watch?v=v46UFjnlm7c">
                                     <i class="icofont-ui-play"></i>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
