@@ -34,7 +34,7 @@
                      <li class="submenu">
                         <a href="#"><i class="fas fa-cog"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
-                           <li><a href="{{ url('/settings') }}"> <i class="fas fa-caret-right"></i>Contacts</a></li>
+                           <li><a href="{{ route('settings') }}"> <i class="fas fa-caret-right"></i>Contacts</a></li>
                             <li><a href="invoice-report.html"> <i class="fas fa-caret-right"></i>Social Icons</a></li>
 
                         </ul>

@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>@yield('title')</title>
-    <meta name="description" content="@yield('metadescription')">
-
-   @include('frontend.layout.partials.header')
+<title>@yield ('title') </title>
+@include('frontend.layout.partials.header')
+<meta name="description" content="@yield('metadescription')">
+@include('frontend.layout.partials.style')
 
 </head>
 

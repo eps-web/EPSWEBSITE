@@ -1,12 +1,21 @@
-@extends('frontend.layout.app')
-@section('title')
-EPS | Easy Payment System
-@endsection
 
-@section('metadescription')
-Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services
- including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.
-@endsection
+
+@extends('frontend.layout.app')
+
+{{-- Start Search Engine Optimization Section --}}
+
+@php
+   $page = "About Us";
+   $info = App\Models\PageSeo::where('page_name',$page)->first();
+
+@endphp
+
+@include('frontend.layout.partials.seoMetrics')
+
+{{-- End  Optimization Section  --}}
+
+
+
 
 @section('main-content')
 
@@ -19,8 +28,8 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                 <div class="breadcrumb-content d-flex flex-column align-items-center text-center">
                     <h1 style="font-size:42px">About EPS</h1>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-uppercase" href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active">About EPS</li>
+                        <li class="breadcrumb-item"><a class="text-uppercase" href="{{ url('/') }}">Home</a></li>
+                        <li class="breadcrumb-item active">{{ $info ->page_name }}</li>
                     </ol>
                 </div>
             </div>
@@ -28,6 +37,10 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
     </div>
 </section>
 <!-- ***** Breadcrumb Area End ***** -->
+
+
+
+
 
 
 <section class="section bg-gray ptb_100">

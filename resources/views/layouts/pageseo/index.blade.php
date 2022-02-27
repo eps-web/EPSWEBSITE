@@ -39,32 +39,34 @@
                                         <th>Page Name</th>
                                         <th>Title</th>
                                         <th>Slug</th>
-                                        <th>Mata Description</th>
+                                        {{-- <th>Meta Description</th> --}}
                                         <th>Action</th>
 
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($all_data as $data) --}}
+                                    @foreach ($all_data as $data)
 
 
                                     <tr>
-                                        <td>1</td>
-                                        <td>Home</td>
-                                        <td>EPS|Easy Payment System</td>
-                                        <td>easy-payment-system</td>
-                                        <td>Easy Payment System (EPS) is an innovative payment </td>
+                                        <td>{{ $loop -> index+1 }}</td>
+                                        <td>{{ $data-> page_name }}</td>
+                                        <td>{{ $data -> title }}</td>
+                                        <td>{{ $data -> slug }}</td>
+                                        {{-- <td>{{ $data -> meta_description }} </td> --}}
 
 
 
 
                                         <td>
 
-                                            <a href=""  class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-telegram" aria-hidden="true"> EDIT </i></a>
+                                            <a href="{{ route('pageseo.edit',$data->id) }}"  class="btn btn-sm btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-telegram" aria-hidden="true"> EDIT </i></a>
 
                                         </td>
                                     </tr>
+
+                                    @endforeach
 
                                 </tbody>
 

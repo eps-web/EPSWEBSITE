@@ -2,12 +2,10 @@
 
         <!-- Logo -->
         <div class="header-left">
-            <a href="index.html" class="logo">
+            <a href="{{ route('home') }}" class="logo">
                 <img src="{{ URL::to('') }}/admin/assets/img/logo.png" alt="Logo">
             </a>
-            <a href="index.html" class="logo logo-small">
-                <img src="admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
-            </a>
+
         </div>
         <!-- /Logo -->
 

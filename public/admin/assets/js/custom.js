@@ -92,8 +92,98 @@ $('a#logout').click(function(e){
 
          });
 
+// PAge seo title setup
 
-         // Menu Fix
+var title_max = 60;
+
+$('#titlearea').keyup(function() {
+    $('#titlearea_feedback').html(title_max + ' characters remaining');
+    var text_length = $('#titlearea').val().length;
+    var text_remaining = title_max - text_length;
+
+    $('#titlearea_feedback').html(text_remaining + ' characters remaining');
+});
+
+// PAge seo charecter setup
+var text_max = 160;
+
+$('#textarea').keyup(function() {
+    $('#textarea_feedback').html(text_max + ' characters remaining');
+    var text_length = $('#textarea').val().length;
+    var text_remaining = text_max - text_length;
+
+    $('#textarea_feedback').html(text_remaining + ' characters remaining');
+});
+
+
+
+//Key Up Event for Meta Description
+
+$('#textarea').on('keyup',function(){
+
+    function timer(){
+    var name = $('#textarea').val();
+    $('#metades').text(name);
+      }
+
+   //setTimeout(myFunc,5000);
+    setTimeout(timer,100);
+
+  });
+
+
+  //Key Up Event for Title
+
+$('#titlearea').on('keyup',function(){
+
+    function timer(){
+    var name = $('#titlearea').val();
+    $('#titledes').text(name);
+      }
+
+   //setTimeout(myFunc,5000);
+    setTimeout(timer,100);
+
+  });
+
+   //Key Up Event for separator
+
+$('#separator').on('click',function(){
+
+    var name = $('#separator').val();
+    $('#sep').text(name);
+
+  });
+
+
+     //Key Up Event for Page slug
+
+$('#pages').on('click',function(){
+
+    var name = $('#pages').val();
+    $('#page').text(name);
+
+  });
+
+   //Key Up Event for Sub Title
+
+$('#subtitlearea').on('keyup',function(){
+
+    function timer(){
+    var name = $('#subtitlearea').val();
+    $('#subtitle').text(name);
+      }
+
+   //setTimeout(myFunc,5000);
+    setTimeout(timer,100);
+
+  });
+
+
+
+
+
+// Menu Fix
          $('#sidebar-menu ul li ul li.ok').parent('ul').slideDown();
          $('#sidebar-menu ul li ul li.ok').parent('ul').parent('li').children('a').addClass('subdrop');
          $('#sidebar-menu ul li ul li.ok a').css('color','#5ae8ff');

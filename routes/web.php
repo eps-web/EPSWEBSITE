@@ -17,26 +17,64 @@ use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::group(
+    [
 
-$a = "shajedul";
+        'prefix' => 'user',
+
+    ],
+
+    function(){
+        Auth::routes(['register'=>false]);
+
+    });
+
+
+//Route::get('/userlogin',[App\Http\Controllers\Auth\LoginController@showLoginForm]);
+
+// Admin Dashboard
+
+Route::group(
+[
+
+    'prefix' => 'admin',
+
+],
+
+function(){
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//
+
+// Settings
+Route::get('/settings',[App\Http\Controllers\SettingsManagement::class,'settingsView'])->name('settings');
+Route::put('/settingsUpdate',[App\Http\Controllers\SettingsManagement::class,'settingsViewUpdate']) ->name('settings.update');
+//User Route
+Route::resource('user','App\Http\Controllers\UserManagement');
+// SEO Section
+Route::resource('/pageseo','App\Http\Controllers\PageSeoController');
 
 //post Management
 Route::resource('postCategory','App\Http\Controllers\postCategoryController');
 Route::resource('postTag','App\Http\Controllers\postTagController');
 Route::resource('post','App\Http\Controllers\postController');
 
-//User Managementy
+});
+
+
+
+
+
+
+
+
+
 
 
 //Frontend vierw Management
-Route::get('/frontpage',[App\Http\Controllers\frontendViewManagement::class,'HomePage'])->name('fhome');
+
 Route::get('/',[App\Http\Controllers\frontendViewManagement::class,'HomePageManage']);
 //Services Section
 Route::get('/balance-transfer',[App\Http\Controllers\frontendViewManagement::class,'Balance_transfer']) -> name('frontend.balance_transfer');
@@ -56,7 +94,7 @@ Route::get('/faq',[App\Http\Controllers\frontendViewManagement::class,'faqInfo']
 
 //Footer
 
-Route::get($a ,[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
+Route::get('/about-us' ,[App\Http\Controllers\frontendViewManagement::class,'AboutUs']) -> name('frontend.aboutUs');
 Route::get('/service-details',[App\Http\Controllers\frontendViewManagement::class,'ServiceDetails']) -> name('frontend.service_details');
 Route::get('/careers',[App\Http\Controllers\frontendViewManagement::class,'Career']) -> name('frontend.career');
 
@@ -76,13 +114,8 @@ Route::get('/cookie',[App\Http\Controllers\frontendViewManagement::class,'Cookie
 
 
 
-
-
-
 // blog single view
 Route::get('/blogSingleView/{id}',[App\Http\Controllers\frontendViewManagement::class,'Blog_single_view']);
-
-
 
 
 //Blog Tag Search
@@ -96,22 +129,8 @@ Route::get('/blog-category-search/{slug}',[App\Http\Controllers\frontendViewMana
 Route::get('/blog-search',[App\Http\Controllers\frontendViewManagement::class,'BlogSearch']) ->name('blog.search');
 
 
-Route::group(['middleware' =>'editor'],function(){
-
-// Settings
-Route::get('/settings',[App\Http\Controllers\SettingsManagement::class,'settingsView']);
-Route::put('/settingsUpdate',[App\Http\Controllers\SettingsManagement::class,'settingsViewUpdate']) ->name('settings.update');
-});
-
-Route::group(['middleware' =>'commentor'],function(){
-    //User Route
-Route::resource('user','App\Http\Controllers\UserManagement');
-
-    });
 
 
-    // SEO Section
 
-    Route::resource('/pageseo','App\Http\Controllers\PageSeoController');
 
 

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('main-content')
 
 <div class="page-wrapper">
@@ -19,16 +20,24 @@
         </div>
         <!-- /Page Header -->
 
+
         <div class="row">
+
+            <div class="col-md-8 card " style="margin-left:15px">
+                <a href="#" style="color:black">https://eps.com.bd/<span id="page" style="text-transform:lowercase">slug</span></a>
+                <h3 style="color:blueviolet"><span id="titledes">EPS </span><span id="sep"> | </span><span id="subtitle">Easy Payment System</span></h3>
+                <p id="metades" style="margin-top:-10px">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO) </p>
+
+            </div>
 
                 <div class="col-md-8">
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h4 class="card-title">Add SEO Infomation for Rank your Pages</h4>
+                            <h4 class="card-title">Page SEO Metrics</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('pageseo.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
 
@@ -36,14 +45,14 @@
                                     <label class="col-form-label col-md-3">Select Pages</label>
                                     <div class="col-md-9">
 
-                                        <select class="form-control post_tag_select"  name="cat">
-                                            <option value="">---- Select Page ----</option>
-                                            <option value="">Home</option>
-                                            <option value="">About US</option>
-                                            <option value="">Faq</option>
-                                            <option value="">Balance Enquiry</option>
-                                            <option value="">Privacy Policy}</option>
-                                            <option value="">Sitemap</option>
+                                        <select class="form-control post_tag_select"  name="page" id="pages">
+                                            <option  value="">---- Select Page ----</option>
+                                            <option  value="">Home</option>
+                                            <option value="About Us">About US</option>
+                                            <option  value="Faq">Faq</option>
+                                            <option  value=" Balance Enquiry">Balance Enquiry</option>
+                                            <option  value="Privacy Policy">Privacy Policy</option>
+                                            <option  value="Sitemap">Sitemap</option>
 
 
                                         </select>
@@ -57,15 +66,16 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Page Title</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" id="titlearea" name="ptitle" maxlength="60" class="form-control">
+                                        <span id="titlearea_feedback" style="float:right"></span>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-3">Separator</label>
+                                    <label class="col-form-label col-md-3"  >Separator</label>
                                     <div class="col-md-9">
 
-                                        <select class="form-control post_tag_select"  name="cat">
+                                        <select class="form-control post_tag_select"  name="separator" id="separator" >
                                             <option value="">---- Select Separator ----</option>
                                             <option value="-"> - </option>
                                             <option value="|"> | </option>
@@ -73,13 +83,14 @@
                                             <option value="~"> ~ </option>
                                         </select>
 
+
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Site Title</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="title" Value="EPS - Easy Payment System" class="form-control">
+                                        <input type="text" id="subtitlearea" name="site_title" Value="EPS - Easy Payment System" class="form-control">
                                     </div>
                                 </div>
 
@@ -88,9 +99,14 @@
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-3">Meta Description</label>
                                     <div class="col-md-9">
-                                        <textarea rows="5" cols="5" name="content"  class="form-control" {{-- id="ckeditor" --}} placeholder="Enter text here"></textarea>
+                                        <textarea rows="5" cols="5" id="textarea" maxlength="160"  name="content"  class="form-control" {{-- id="ckeditor" --}} placeholder="Enter text here"></textarea>
+                                        <span id="textarea_feedback" style="float:right"></span>
                                     </div>
                                 </div>
+
+
+
+
 
                                    {{--  <div class="form-group row">
                                         <label class="col-form-label col-md-3">Featured image</label>
@@ -106,58 +122,9 @@
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Canonical Url</label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="title" Value="" class="form-control">
+                                            <input type="text" name="can_url" Value="" class="form-control">
                                         </div>
                                     </div>
-
-
-                                    {{-- Schema Markup  --}}
-
-
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label">Schema Markup</label>
-
-                                        <div class="col-md-9">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h4 class="card-title">Schema </h4>
-                                                </div>
-                                                <div class="card-body">
-                                                    <ul class="nav nav-tabs">
-                                                        <li class="nav-item"><a class="nav-link" href="#basictab1" data-toggle="tab">Home</a></li>
-                                                        <li class="nav-item"><a class="nav-link active" href="#basictab2" data-toggle="tab">Profile</a></li>
-                                                        <li class="nav-item"><a class="nav-link" href="#basictab3" data-toggle="tab">Messages</a></li>
-                                                    </ul>
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane show" id="basictab1">
-                                                            Tab content 1
-                                                        </div>
-                                                        <div class="tab-pane active" id="basictab2">
-                                                            Tab content 2
-                                                        </div>
-                                                        <div class="tab-pane" id="basictab3">
-                                                            Tab content 3
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-                                    {{-- end schema markup --}}
-
-
-
 
 
 
@@ -177,6 +144,10 @@
     </div>
 </div>
 
+
+
 @endsection
+
+
 
 

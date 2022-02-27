@@ -14,14 +14,14 @@ class CreatePageSeosTable extends Migration
     public function up()
     {
         Schema::create('page_seos', function (Blueprint $table) {
+            $table->id();
             $table->string('page_name')->unique();
             $table->string('title');
-            $table->string('sub-title');
-            $table->string('separator');
             $table->string('slug');
-            $table->string('meta-description');
-            $table->string('Canonical-Url') ->nullable();
-            $table->longText('Schema') -> nullable();
+            $table->string('separator');
+            $table->string('sub_title');
+            $table->string('meta_description');
+            $table->string('Canonical_Url') ->nullable();
             $table->integer('posted_by') ->default(1);
             $table->timestamps();
         });

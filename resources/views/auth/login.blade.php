@@ -35,12 +35,12 @@
         <div class="container">
             <div class="loginbox">
                 <div class="login-left">
-                    <img class="img-fluid" src="admin/assets/img/logo-white.png" alt="Logo">
+                    <img class="img-fluid" src="{{ URL::to('/') }}/admin/assets/img/logo-white.png" alt="Logo">
                 </div>
                 <div class="login-right">
                     <div class="login-right-wrap">
                         <h1>Login</h1>
-                        <p class="account-subtitle">Access to our dashboard</p>
+                        <p class="account-subtitle">Access to  dashboard</p>
                         @if($errors -> any())
 
                             <p class="alert alert-danger"> {{$errors -> first()}} <button class="close" data-dismiss="alert">&times;</button></p>
