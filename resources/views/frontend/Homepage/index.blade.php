@@ -43,14 +43,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3 col-lg-6">
+                        <div class="col-12 col-md-3 col-lg-6 row">
                             <!-- Welcome Thumb -->
                             {{-- <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> --}}
-                                <img style="margin-top:130px; height:500px" class="mobimg" src="{{ URL::to('') }}/frontend/images/web2.png" alt="" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                {{-- <img style="margin-left:200px; width:280px" src="{{ URL::to('') }}/frontend/images/mobile-slider.png" alt=""> --}}
+                                <img class="mobimg" src="{{ URL::to('') }}/frontend/images/web2.png" alt=""style="position: relative">
+                                {{-- <img style="margin-left:200px; width:280px" class="mobimg" src="{{ URL::to('') }}/frontend/images/mobile-slider.png" alt=""> --}}
 
-            {{-- <img src="{{ URL::to('/') }}/frontend/images/666.1.gif" alt="Test" style="margin-top:-485px ; width:234px; border:none; margin-left:226px; height:415px"> --}}
+            <img src="{{ URL::to('/') }}/frontend/images/r1test.gif" alt="Test"   style="position:absolute;top:36.5%;width:31%; height:310px;margin-left:32.35%">
+          {{--   <video controls autoplay>
+                <source src="test.mp4" type="video/mp4">
 
+                Your browser does not support the video tag.
+              </video>
+ --}}
 
                             {{-- </div> --}}
                             <!-- Video Icon -->

@@ -47,7 +47,7 @@
 
                                         <select class="form-control post_tag_select"  name="page" id="pages">
                                             <option  value="">---- Select Page ----</option>
-                                            <option  value="">Home</option>
+                                            <option  value="Home">Home</option>
                                             <option value="About Us">About US</option>
                                             <option  value="Faq">Faq</option>
                                             <option  value=" Balance Enquiry">Balance Enquiry</option>

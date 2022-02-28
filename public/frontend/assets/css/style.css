@@ -1207,8 +1207,12 @@ a,
 }
 
 .mobimg{
-    margin-left: 100px;
+
+    margin-top:130px;
+    height:500px;
+    z-index: 0;
 }
+
 
 .respon{
     font-size: 36px;
@@ -1218,22 +1222,15 @@ a,
 @media only screen and (max-width: 600px) {
 
     .respon{
-        margin-top: 300px;
+        margin-top: 20px;
         font-size: 20px;
 
     }
 
 
 
-
-
-    .mobimg{
-        margin-left: 0px;
-
-    }
-
     .benifits-area{
-        margin-top: 300px;
+        margin-top: 50px;
     }
   }
 
