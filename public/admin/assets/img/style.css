@@ -821,7 +821,11 @@ a,
 
 /*BACKGROUND IMAGES*/
 .welcome-area {
+<<<<<<< HEAD
+        /* background: rgba(0, 0, 0, 0) url("../img/bg/welcome-main.png") no-repeat scroll center center / cover; */
+=======
     /* background: rgba(0, 0, 0, 0) url("../img/bg/welcome-main.png") no-repeat scroll center center / cover; */
+>>>>>>> dd6aaaaaba289abc926addd2a272e317656ffdb1
 }
 
 .seoul .welcome-area {
@@ -942,7 +946,7 @@ a,
     height: 40px;
     width: 40px;
     border-radius: 3px;
-    background-color: #28a745;
+    background-color: #0E694A;
     text-align: center;
     cursor: pointer;
     z-index: 500;
@@ -1219,19 +1223,6 @@ a,
 
 }
 
-.mobimg{
-
-    position: relative;
-}
-
-.mobgifimg{
-    position:absolute;
-    top:36.5%;
-    width:31%;
-    height:310px;
-    margin-left:32.35%;
-}
-
 @media only screen and (max-width: 600px) {
 
     .respon{
@@ -1240,21 +1231,22 @@ a,
 
     }
 
-.mobimg{
-    margin-left: 15px;
-    position: relative;
-    height: 350px;
-}
 
-.mobgifimg{
-    width:29.5%;
-    margin-left:35.50%;
-    top:42%;
-    height:215px;
-}
+
+<<<<<<< HEAD
+
+
+    .mobimg{
+       margin-left:15px;
+
+    }
 
     .benifits-area{
+        margin:0px 15px;
+=======
+    .benifits-area{
         margin-top: 50px;
+>>>>>>> a36501d1385c1971003eaa77ee191823e360789b
     }
   }
 
