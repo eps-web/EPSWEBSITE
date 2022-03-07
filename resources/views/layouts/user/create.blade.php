@@ -53,6 +53,13 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                           <label for="image"> image</label>
+                                           <div class="custom-file">
+                                               <input type="file" name="image" class="custom-file-input" id="image">
+                                               <label class="custom-file-label" for="image">Choose file</label>
+                                           </div>
+                                       </div>
 
 
                                 <div class="form-group row">
@@ -62,9 +69,14 @@
                                         <select class="form-control post_tag_select" name="role">
 
 
+                                            <option   value="">Role</option>
                                             <option   value="editor">Editor</option>
-                                            <option  value="commentor">Commentor</option>
+                                            <option   value="viewer">Viewer</option>
+                                            <option  value="commentor">HR</option>
                                             <option  value="admin">Admin</option>
+                                                @if ((Auth::user()->user_role == 'superadmin'))
+                                            <option  value="superadmin">Super Admin</option>
+                                            @endif
 
                                         </select>
 
@@ -101,5 +113,3 @@
 </div>
 
 @endsection
-
-

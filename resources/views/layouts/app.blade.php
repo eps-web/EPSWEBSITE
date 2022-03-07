@@ -3,6 +3,7 @@
 
 <head>
 
+
    @include('layouts.head')
 
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -38,6 +39,7 @@
 </div>
 
 @include('layouts.partials.script')
+
 
 </body>
 

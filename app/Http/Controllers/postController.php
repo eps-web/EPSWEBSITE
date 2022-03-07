@@ -26,6 +26,7 @@ class postController extends Controller
 
     public function index()
     {
+
         $data = post::all();
         return view('layouts.post.index',[
            'all_data' => $data

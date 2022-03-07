@@ -25,79 +25,37 @@
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h4 class="card-title">Update  Post</h4>
+                            <h4 class="card-title">Update User</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('post.update',$post->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('user.update',$all_data->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label">Post Title</label>
+                                    <label class="col-lg-3 col-form-label">User Name</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="title" value="{{ $post->title }}" class="form-control">
+                                        <input type="text" name="name" value="{{ $all_data->name }}" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-3">Categories</label>
-                                    <div class="col-md-9">
-
-                                        <select class="form-control post_tag_select"  name="cat">
-
-                                            <option value="{{ $post->postCat->id }}">{{ $post->postCat->name }}</option>
-
-                                            @foreach ($post_category as $p_cat )
-
-                                            <option  value= "{{ $p_cat->id  }}">{{ $p_cat->name }}</option>
-                                            @endforeach
-
-
-                                        </select>
-
-
-
-
+                                    <label class="col-lg-3 col-form-label">User Role</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="user_role" value="{{ $all_data->user_role }}" class="form-control">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-md-3">Select Tag</label>
-                                    <div class="col-md-8">
-                                        @foreach ($post_tags as $ptag )
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="{{ $ptag->id }}" name="tags[]"
-                                                @foreach ($post->Tags as $t )
-                                                @if ($ptag->id == $t->id)
-                                                checked
-
-                                                @endif
-                                                @endforeach
 
 
-                                                > {{ $ptag->name }}
-                                            </label>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-3">Post Content</label>
-                                    <div class="col-md-9">
-                                        <textarea rows="5" cols="5" name="content"  class="form-control" id="ckeditor" placeholder="Enter text here"> {{ $post->description }}</textarea>
+                                    <label class="col-form-label col-md-7">User image</label>
+                                    <div class="col-md-4">
+                                        <label for="fimg" id="first"><img src="{{ URL::to('admin/assets/img/camera.jpg') }}" style="width:100px;cursor: pointer"/></label>
+                                        <input class="form-control" type="file" name="image" id="fimg" style="display: none">
+                                        <img src="" alt="" id="feather_img" style="max-width:30%;display:block">
+                                        <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
                                     </div>
                                 </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-form-label col-md-3">Featured image</label>
-                                        <div class="col-md-9">
-                                            <label for="fimg" id="first"><img src="{{ URL::to('')}}/media/post/{{ $post->images }}" style="width:100px;cursor: pointer"/></label>
-                                            <input class="form-control" type="hidden" name="old_image" value="{{ $post->images }}"  id="" style="display: none">
-                                            <input class="form-control" type="file" name="new_image" id="fimg" style="display: none">
-                                            <img src="" alt="" id="feather_img" style="max-width:30%;display:block">
-                                            <label for="fimg" style="display: ;margin-bottom: 15px" id="second"><span class="btn btn-sm btn-primary mt-2 "> Change Image</span></label>
-                                        </div>
-                                    </div>
 
 
                                 <div class="text-right">
@@ -113,5 +71,3 @@
 </div>
 
 @endsection
-
-

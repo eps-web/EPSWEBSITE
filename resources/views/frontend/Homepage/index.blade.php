@@ -10,6 +10,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
 
 @section('main-content')
 
+
             <!-- ***** Welcome Area Start ***** -->
             <section id="home" class="section welcome-area d-flex align-items-center">
                 <div class="container">
@@ -28,8 +29,9 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         </div>
                         <div class="col-12 col-md-5 col-lg-6">
                             <!-- Welcome Thumb -->
-                            <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                                <img src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
+                            <div style="position:relative;" class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                              <img style="position:absolute; back-ground:red;" src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
+                              <img style="position:relative;" src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
                             </div>
                             <!-- Video Icon -->
                             <div class="video-icon d-none d-lg-block">
@@ -48,7 +50,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                 <div class="container">
                     <div class="row">
                         <!-- Benifits Item -->
-                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
                                     <img src="{{ URL::to('') }}/frontend/images/1640852164.png" alt="">

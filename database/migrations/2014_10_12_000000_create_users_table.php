@@ -19,10 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('details')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('{{ URL::to('') }}/admin/assets/img/logo.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('user_role');
+            $table->enum('user_role',['superadmin','admin','editor','hr','viewer'])->default('viewer');
+            $table->enum('status',['active','inactive'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

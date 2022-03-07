@@ -13,6 +13,7 @@
                 <div class="collapse navbar-collapse" id="appo-menu">
                     <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
+
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ url('/') }}">Home</a>
                         </li>
@@ -66,6 +67,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('frontend.contact') }}">Contact us</a>
                         </li>
+
                     </ul>
                 </div>
             </nav>

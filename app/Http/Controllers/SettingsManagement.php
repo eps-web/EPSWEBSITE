@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\settings;
+use App\Models\logo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SettingsManagement extends Controller
@@ -41,6 +43,46 @@ class SettingsManagement extends Controller
 
 
       $edit_data ->update();
+      // dd($request->all());
       return redirect()->back() ->with('success','data updated successfully');
     }
+
+    public function eps_map()
+    {
+      $map = logo::orderBy('id','DESC')->paginate(4);
+        return view('layouts.settings.socialicon',compact('map'));
+    }
+
+    public function settingsLogo(){
+      $logos = logo::orderBy('id','DESC')->paginate(4);
+        return view('layouts.settings.logo',compact('logos'));
+
+    }
+    public function store(Request $request)
+    {
+      $this -> validate($request,[
+
+          'image'=>'required|image',
+          'alt_tag'=>'required',
+
+      ]);
+    $post=  logo::create([
+
+              'alt_tag' => $request->alt_tag,
+              'image'=>'image.png',
+               'published_at'=>Carbon::now(),
+
+          ]);
+
+                if($request->has('image')){
+                  $image=$request->image;
+                  $image_new_name = time().'.'.$image->getClientOriginalName();
+                  // return $image_new_name;
+                  $image->move('storage/benifits/',$image_new_name);
+                  $post->image='/storage/benifits/'.$image_new_name;
+                  $post->save();
+
+      return redirect()->back() ->with('success','data updated successfully');
+    }
+  }
 }
