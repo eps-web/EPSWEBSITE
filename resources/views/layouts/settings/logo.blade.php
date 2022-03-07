@@ -40,7 +40,7 @@
            <td>{{ $loop -> index+1 }}</td>
         <img class="rounded-circle" src="{{ asset($data->image) }}" width="70" alt="{{$data->alt_tag}}">
 
-          <a> alt_tag="{{$data->alt_tag}}"</a> &
+          <a> alt_tag="{{$data->alt_tag}}"</a>
           <a>Published On {{ $data->created_at->format('d M, Y') }}</a>
       </div><br>
       <td><div class="status-toggle float-right d-inline" >
@@ -58,15 +58,9 @@
       <td class="text-left">
         <div class="actions">
 
-         <a href=""  class=" float-right d-inline bg-primary-light" style="padding-top:5px; border-radius:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
 
 
-          <form action="" method="POST" class="float-right d-inline">
-      @include('validate')
-              @method('delete')
-                  @csrf
-          <button style="border-radius:8px; background-color:#218838;color:#fff;margin-right: 5px;" class="  del_button" data-toggle="tooltip" title="Delete" ><i class="fas fa-window-close"></i></button>
-          </form>
+
         </div>
       </td>
 

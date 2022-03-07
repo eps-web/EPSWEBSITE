@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutUs extends Model
+class Aboutus extends Model
 {
     use HasFactory;
-      protected $guarded=[];
+      protected $guarded=['created_at', 'updated_at'];
 }

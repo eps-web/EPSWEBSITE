@@ -1,9 +1,9 @@
 <header class="section header-area">
-    <div id="appo-header" class="header sticky">
+    <div id="appo-header" class="header">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light">
                 <!-- Logo -->
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo" src="{{ URL::to('') }}/frontend/assets/img/logo/logo.png" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#appo-menu">
@@ -13,11 +13,10 @@
                 <div class="collapse navbar-collapse" id="appo-menu">
                     <!-- Header Items -->
                     <ul class="navbar-nav header-items ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                      {{--   <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
                                 Services
                             </a>
@@ -36,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
 
                      {{--    <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown">
@@ -54,9 +53,9 @@
                             </div>
                         </li> --}}
 
-                        <li class="nav-item">
+                       {{--  <li class="nav-item">
                             <a class="nav-link scroll" href="https://blog.eps.com.bd/">blog</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link scroll" href="{{ route('frontend.faq') }}">FAQ</a>
@@ -67,7 +66,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('frontend.contact') }}">Contact us</a>
                         </li>
-
                     </ul>
                 </div>
             </nav>

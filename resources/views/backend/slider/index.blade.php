@@ -1,14 +1,10 @@
 @extends('layouts.app')
 
 @section('main-content')
-@include('frontend.layout.partials.header')
-@include('frontend.layout.partials.script')
 
  <div class="page-wrapper">
 
 <div class="content container-fluid">
-
-
 
             <!-- Page Header -->
             <div class="page-header">
@@ -19,7 +15,7 @@
 
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="javascript:(0);">Home page Section</a></li>
-                            <li class="breadcrumb-item active">Features</li>
+                            <li class="breadcrumb-item active">Slider</li>
                           </ul>
 
 
@@ -62,66 +58,67 @@
                   </div>
               </div>
               <div class="card-body">
-                 @include('validate')
-                <div class="table-responsive">
-                  <table class="datatable table table-hover table-center mb-0">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Heading</th>
 
-                        <th>Image</th>
-                        <th class="text-right">Status</th>
-                        <th class="text-right">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                           @foreach($all_data as $data)
-                      <tr>
-                         <td>{{ $loop -> index+1 }}</td>
-                         <td>{{$data->title}}</td>
+                <section class="section work-area ptb_100">
+                    <div class="container">
+                    <!-- Work Slider Wrapper -->
+                    <div class="work-wrapper d-none d-md-block">
+                        <div class="work-slider-wrapper" data-aos="zoom-in">
+                            <!-- Work Slider -->
 
+                          <ul class="work-slider owl-carousel">
+                            @foreach($all_data as $data)
+                              <li class="slide-item">
+                                  <img src="{{$data->image}}" alt="{{$data->alt_tag}}"><br>
 
-                        <td>
-                          <h2 class="table-avatar">
-                            <a href="profile.html" class="avatar avatar-sm mr-2">
-                              <img class="avatar-img" src="{{$data->image}}" alt="{{$data->alt_tag}}">
-                            </a>
+                              </li>
 
-                          </h2>
-                        </td>
-                        <td><div class="status-toggle float-right" >
-                      <?php if($data->status == '1'){ ?>
+                            @endforeach
 
-                            <a href="{{url('/slider-status-change',$data->id)}}" class=" btn-sm btn-info"style="border-radius:29px;border-solid:1px;backgroung-color:red;">Active</a>
-
-                            <?php }else{ ?>
-
-                              <a href="{{url('/slider-status-change',$data->id)}}" class="btn-sm btn-success" style="border-radius:29px;border-solid:1px;backgroung-color:red;">Inactive</a>
-
-                            <?php } ?>
+                          </ul>
                         </div>
-                         </td>
-
-                        <td class="text-right">
-                          <div class="actions">
-
-                           <a href="{{ route('slider.edit',$data->id) }}"  class=" bg-primary-light" style="padding-top:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
+                    </div>
 
 
-                            <form action="{{ route('slider.destroy', $data->id) }}" method="POST" class="d-inline">
-@include('validate')
-                                @method('delete')
-                                    @csrf
-                            <button style="border-radius:12px; background-color:#218838;color:#fff" class="  del_button" data-toggle="tooltip" title="Delete" ><i class="fas fa-times-circle"></i>Delete</button>
-                            </form>
-                          </div>
-                        </td>
-                      </tr>
-                @endforeach
-                    </tbody>
-                  </table>
-                </div>
+
+                        <!-- Work Content -->
+                        <div class="row justify-content-end justify-content-lg-between work-content" id="work-slider-pager">
+                              @foreach($all_data as $data)
+                            <div class="col-12 col-sm-6">
+                                <a href="#" class="pager-item active">
+                                    <!-- Single Work -->
+                                    <div class="single-work d-inline-block text-center p-4">
+                                        <h3 class="mb-2">{{$data->title}}</h3>
+                                        <p>{{$data->description}}</p>
+
+
+                                        <div class="actions">
+
+                                         <a href="{{ route('slider.edit',$data->id) }}"  class=" float-left bg-primary-light" style="padding-top:3px;margin-right: 4px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+
+
+                                        </div>
+
+                                        <div class="status-toggle float-right" >
+                                      <?php if($data->status == '1'){ ?>
+
+                                            <a href="{{url('/slider-status-change',$data->id)}}" class=" btn-sm btn-info"style="border-radius:29px;border-solid:1px;backgroung-color:red;">Active</a>
+
+                                            <?php }else{ ?>
+
+                                              <a href="{{url('/slider-status-change',$data->id)}}" class="btn-sm btn-success" style="border-radius:29px;border-solid:1px;backgroung-color:red;">Inactive</a>
+
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+
               </div>
             </div>
           </div>

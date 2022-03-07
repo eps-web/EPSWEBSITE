@@ -2,16 +2,11 @@
 
         <!-- Logo -->
         <div class="header-left">
-            <a href="index.html" class="logo">
+            <a href="{{ route('home') }}" class="logo">
                 <img src="{{ URL::to('') }}/admin/assets/img/logo.png" alt="Logo">
             </a>
-            <a href="index.html" class="logo logo-small">
-                <img src="admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
-            </a>
+
         </div>
-
-
-
         <!-- /Logo -->
 
         <a href="javascript:void(0);" id="toggle_btn">
@@ -33,7 +28,6 @@
 
         <!-- Header Right Menu -->
         <ul class="nav user-menu">
-
 
             <!-- Notifications -->
             <li class="nav-item dropdown noti-dropdown">
@@ -110,39 +104,38 @@
 
             <!-- User Menu -->
             <li class="nav-item dropdown has-arrow">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <span class="user-img"><img class="rounded-circle" src="{{ Auth::user()->image}}" width="31" alt="{{ Auth::user()->name }}"></span>
-                    <!-- <span class="user-img"><img class="rounded-circle" src="{{URL::to('admin/assets/img/profiles/avatar-01.jpg')}}" width="31" alt="Ryan Taylor"></span> -->
-                </a>
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <span class="user-img"><img class="rounded-circle" src="{{ Auth::user()->image}}" width="31" alt="{{ Auth::user()->name }}"></span>
+                  <!-- <span class="user-img"><img class="rounded-circle" src="{{URL::to('admin/assets/img/profiles/avatar-01.jpg')}}" width="31" alt="Ryan Taylor"></span> -->
+              </a>
 
-                <div class="dropdown-menu">
+              <div class="dropdown-menu">
 
-                    <div class="user-header">
-                        <div class="avatar avatar-sm">
+                  <div class="user-header">
+                      <div class="avatar avatar-sm">
 
-                            <img src="{{ Auth::user()->image}}" alt="User Image" class="avatar-img rounded-circle">
-                        </div>
+                          <img src="{{ Auth::user()->image}}" alt="User Image" class="avatar-img rounded-circle">
+                      </div>
 
-                        <div class="user-text">
+                      <div class="user-text">
 
-                            <!-- <h6>Ryan Taylor</h6>
-                            <p class="text-muted mb-0">Administrator</p> -->
-                            <h5 class="card-title">{{ Auth::user()->name }}</h5>
-                            <p class="card-title">{{ Auth::user()->user_role }}</p>
+                          <!-- <h6>Ryan Taylor</h6>
+                          <p class="text-muted mb-0">Administrator</p> -->
+                          <h5 class="card-title">{{ Auth::user()->name }}</h5>
+                          <p class="card-title">{{ Auth::user()->user_role }}</p>
 
 
-                        </div>
-                    </div>
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a class="dropdown-item" id="logout" href="">Logout</a>
-                </div>
+                      </div>
+                  </div>
+                  <a class="dropdown-item" href="profile.html">My Profile</a>
+                  <a class="dropdown-item" href="settings.html">Settings</a>
+                  <a class="dropdown-item" id="logout" href="">Logout</a>
+              </div>
 
-            </li>
+          </li>
             <!-- /User Menu -->
 
         </ul>
         <!-- /Header Right Menu -->
 
-  
-  </div>
+    </div>

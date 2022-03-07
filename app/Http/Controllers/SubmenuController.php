@@ -1,16 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
-use App\Models\Menu;
-use App\Http\Controllers\Controller;
-// use DB;
-use App\Models\Submenu;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-class SubmenuController extends Controller
-
-
+use App\Models\menu;
+use App\Models\Submenu;
+class SubMenuController extends Controller
 {
-    /**
+  /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -23,8 +20,8 @@ class SubmenuController extends Controller
     {
       // $submenus =  Submenu::all();
        $submenus= Submenu::orderBy('order','ASC')->get();
-// $menus = Menu::all();
-        return view('backendmenu',compact('submenus'));
+$menus = Menu::all();
+        return view('backend.menu.backendmenu',compact('submenus','menus'));
     }
 
     /**
@@ -34,9 +31,9 @@ class SubmenuController extends Controller
      */
     public function create()
     {
-        $menus = Menu::all();
+        $menus = menu::all();
 
-        return view('backend.submenu.create',compact('menus'));
+        return view('backend.menu.submenu',compact('menus'));
     }
 
     /**
@@ -54,13 +51,13 @@ class SubmenuController extends Controller
       // ]);
       // dd($request->all());
    Submenu::create([
-     'name'=>$request->name,
+     'title'=>$request->title,
         'menu_id'=>$request->menu_id,
         'url'=>$request->url,
 
       ]);
         // dd($request->all());
-      return redirect()->route('menu.index')->with('success','submenu save successfully');
+      return redirect()->route('submenu.index')->with('success','submenu save successfully');
     }
 
     /**

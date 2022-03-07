@@ -12,7 +12,10 @@
                 <div class="col-sm-12">
                     <h3 class="page-title">Welcome {{ Auth::user()->name }}</h3>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active"><a href="index.html">Dashboard</a></li>
+
+                        <li class="breadcrumb-item"><a href="{{route('user.index')}}">User</a></li>
+                        <li class="breadcrumb-item active">Create User</li>
                     </ul>
                 </div>
             </div>
@@ -54,35 +57,37 @@
                                 </div>
 
                                 <div class="form-group row">
-                                           <label for="image"> image</label>
-                                           <div class="custom-file">
-                                               <input type="file" name="image" class="custom-file-input" id="image">
-                                               <label class="custom-file-label" for="image">Choose file</label>
-                                           </div>
-                                       </div>
+                                    <label class="col-lg-3 col-form-label">Image</label>
+                                    <div class="col-lg-9">
+                                      <input class="form-control" type="file" name="image" id="fimg" style="">
+                                      <img src="" alt="" id="feather_img" style="max-width:30%;display:block">
+                                      <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
+                                    </div>
+                                </div>
+
 
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-3">User Role</label>
-                                    <div class="col-md-9">
+                                      <label class="col-form-label col-md-3">User Role</label>
+                                      <div class="col-md-9">
 
-                                        <select class="form-control post_tag_select" name="role">
-
-
-                                            <option   value="">Role</option>
-                                            <option   value="editor">Editor</option>
-                                            <option   value="viewer">Viewer</option>
-                                            <option  value="commentor">HR</option>
-                                            <option  value="admin">Admin</option>
-                                                @if ((Auth::user()->user_role == 'superadmin'))
-                                            <option  value="superadmin">Super Admin</option>
-                                            @endif
-
-                                        </select>
+                                          <select class="form-control post_tag_select" name="role">
 
 
-                                    </div>
-                                </div>
+                                              <option   value="">Role</option>
+                                              <option   value="editor">Editor</option>
+                                              <option   value="viewer">Viewer</option>
+                                              <option  value="hr">HR</option>
+                                              <option  value="admin">Admin</option>
+                                                  @if ((Auth::user()->user_role == 'superadmin'))
+                                              <option  value="superadmin">Super Admin</option>
+                                              @endif
+
+                                          </select>
+
+
+                                      </div>
+                                  </div>
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Password</label>

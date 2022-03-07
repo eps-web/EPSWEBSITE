@@ -9,11 +9,11 @@ class Submenu extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    protected $fillable = [
-        'name', 'order','url','type','menu_id'
-    ];
-    // public function menu()
-    //   {
-    //     return $this->belongsTo('App\Models\Menu');
-    //   }
+  protected $fillable = [
+      'name', 'order','url','type','menu_id'
+  ];
+  public function menu()
+    {
+      return $this->belongsTo('App\Models\Menu');
+    }
 }

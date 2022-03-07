@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
-use App\Models\Menu;
 use App\Models\post;
 use App\Models\category;
 use App\Models\settings;
@@ -12,12 +11,9 @@ use Illuminate\Http\Request;
 class frontendViewManagement extends Controller
 {
 
-
-  public function HomePage(){
-    return view('frontend.index');
-  }
-
-
+    public function HomePage(){
+        return view('frontend.index');
+    }
 
     public function HomePageManage(){
         $st=settings::find(1);
@@ -72,9 +68,6 @@ class frontendViewManagement extends Controller
 public function AboutUs(){
     return view('frontend.FooterMenus.about_us');
 }
-public function Features(){
-    // return view('frontend.FooterMenus.about_us');
-}
 
 public function ServiceDetails(){
     return view('frontend.FooterMenus.service-details');
@@ -87,6 +80,15 @@ public function Career(){
 public function PrivacyPolicy(){
     return view('frontend.FooterMenus.privacy');
 }
+
+public function TermsAndCondition(){
+    return view('frontend.FooterMenus.terms-condition');
+}
+
+public function Cookie(){
+    return view('frontend.FooterMenus.cookie');
+}
+
 
 
 

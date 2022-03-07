@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-
-
+   @include('frontend.layout.partials.style')
    @include('layouts.head')
 
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -16,6 +15,8 @@
 
     <!-- Header -->
    @include('layouts.header')
+
+
     <!-- /Header -->
 
     <!-- Sidebar -->
@@ -39,8 +40,7 @@
 </div>
 
 @include('layouts.partials.script')
-
-
+ @include('frontend.layout.partials.script')
 </body>
 
 

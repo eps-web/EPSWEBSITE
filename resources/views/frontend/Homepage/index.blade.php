@@ -1,48 +1,76 @@
-@extends('frontend.layout.app')
-@section('title')
-EPS | Easy Payment Systems
-@endsection
 
-@section('metadescription')
-Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services
- including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.
-@endsection
+@extends('frontend.layout.app')
+
+{{-- Start Search Engine Optimization Section --}}
+
+@php
+   $page = "Home";
+   $info = App\Models\PageSeo::where('page_name',$page)->first();
+
+@endphp
+
+@include('frontend.layout.partials.seoMetrics')
+
+{{-- End  Optimization Section  --}}
 
 @section('main-content')
-
 
             <!-- ***** Welcome Area Start ***** -->
             <section id="home" class="section welcome-area d-flex align-items-center">
                 <div class="container">
                     <div class="row align-items-center">
                         <!-- Welcome Intro Start -->
-                        <div class="col-12 col-md-7 col-lg-6">
+                        <div class="col-12 col-md-9 col-lg-6">
                             <div class="welcome-intro">
-                                <h1>EPS</h1>
-                                <h3 class="fw-3 mt-2 mt-sm-3">Easy Payment System</h3>
-                                <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
-                                <div class="button-group">
+                                <h1 class="respon">Easy Payment System - EPS</h1>
+                                <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
+                                <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution... <a style="font-weight: 600;" href="https://eps.com.bd/about-eps">Read More</a></p>
+                              {{--   <div class="button-group">
                                     <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
+                                    <a href="{{ route('frontend.aboutUs') }}"   class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
+                                </div> --}}
+                                <div class="button-group store-buttons">
+                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                        <p class="dsp-tc">GET IT ON
+                                            <br> <span>Google Play</span></p>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                        <p class="dsp-tc">AVAILABLE ON
+                                            <br> <span>Apple Store</span></p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-5 col-lg-6">
+                        <div class="col-12 col-md-3 col-lg-6 row">
                             <!-- Welcome Thumb -->
-                            <div style="position:relative;" class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-                              <img style="position:absolute; back-ground:red;" src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
-                              <img style="position:relative;" src="{{ URL::to('') }}/frontend/images/welcome-mockup-2.png" alt="">
-                            </div>
+                            {{-- <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> --}}
+                                <img class="mobimg" src="{{ URL::to('') }}/frontend/images/web2.png" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"   alt="">
+                                {{-- <img style="margin-left:200px; width:280px" class="mobimg" src="{{ URL::to('') }}/frontend/images/mobile-slider.png" alt=""> --}}
+
+            <img src="{{ URL::to('/') }}/frontend/images/r1test.gif" alt="Test" class="mobgifimg"  data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+          {{--   <video controls autoplay>
+                <source src="test.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+              </video>
+ --}}
+
+                            {{-- </div> --}}
                             <!-- Video Icon -->
-                            <div class="video-icon d-none d-lg-block">
+                           {{--  <div class="video-icon d-none d-lg-block">
                                 <a class="play-btn" data-fancybox href="https://www.youtube.com/watch?v=v46UFjnlm7c">
                                     <i class="icofont-ui-play"></i>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
             </section>
+
+
+
             <!-- ***** Welcome Area End ***** -->
 
             <!-- ***** Benifits Area Start ***** -->
@@ -50,26 +78,26 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                 <div class="container">
                     <div class="row">
                         <!-- Benifits Item -->
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852164.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/User-friendly.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">User Friendly</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">User Friendly</h3>
                                     <p>User friendly interface will be ensuring an optimum interaction between users and services.</p>
                                 </div>
                             </div>
                         </div>
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
-                            <div class="benifits-item text-center p-3">
+                            <div class="benifits-item text-center p-3 ">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852391.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/Notification.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">Instant Notification</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">Instant Notification</h3>
                                     <p>Instant Transaction Notification will be provided through SMS and E-mail.</p>
                                 </div>
                             </div>
@@ -77,11 +105,11 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852623.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/security.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">Anti-fraud measures</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">Anti-fraud measures</h3>
                                     <p>EPS will ensure strong measurement to protect database of each and every parties regarding the
         services.</p>
                                 </div>
@@ -90,11 +118,11 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up">
                             <div class="benifits-item text-center p-3">
                                 <div class="feature-icon">
-                                    <img src="{{ URL::to('') }}/frontend/images/1640852907.png" alt="">
+                                    <img src="{{ URL::to('') }}/frontend/images/support.png" width="60%" alt="">
                                 </div>
                                 <!-- Benifits Text -->
                                 <div class="benifits-text">
-                                    <h3 class="mb-2">24/7 Support</h3>
+                                    <h3 class="mb-2" style="margin-top:20px">24/7 Support</h3>
                                     <p>EPS is designed to provide 24/7 customer support, any issue will be resolved no matter what day or time it is.</p>
                                 </div>
                             </div>
@@ -149,26 +177,26 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
             <!-- ***** Work Area Start ***** -->
             <section class="section work-area ptb_100">
                 <!-- Work Slider Wrapper -->
-                <div class="work-wrapper d-none d-md-block">
-                    <div class="work-slider-wrapper" data-aos="zoom-in">
-                        <!-- Work Slider -->
-                        <ul class="work-slider owl-carousel">
-                            <li class="slide-item">
-                                <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/1.png" alt="">
-                            </li>
-                            <li class="slide-item">
-                                <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/2.png" alt="">
-                            </li>
-                            <li class="slide-item">
-                                <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/3.png" alt="">
-                            </li>
-                            <li class="slide-item">
-                                <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/4.png" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="container">
+                  <div class="work-wrapper d-none d-md-block">
+                    <div class="work-slider-wrapper" data-aos="zoom-in">
+                      <!-- Work Slider -->
+                      <ul class="work-slider owl-carousel">
+                        <li class="slide-item">
+                          <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/1.png" alt="">
+                        </li>
+                        <li class="slide-item">
+                          <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/2.png" alt="">
+                        </li>
+                        <li class="slide-item">
+                          <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/3.png" alt="">
+                        </li>
+                        <li class="slide-item">
+                          <img src="{{ URL::to('') }}/frontend/assets/img/screenshots/4.png" alt="">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                     <div class="row justify-content-center d-md-none">
                         <!-- Section Heading -->
                         <div class="col-12 col-md-10 col-lg-6">
@@ -235,9 +263,10 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                                 <!-- Headings -->
                                 <div class="headings d-flex align-items-center mb-4">
                                     <span class="text-uppercase d-none d-sm-block">Features</span>
-                                    <h2 class="text-capitalize">EPS Is The Only All In One Payment System To Do Any Kind Of Transaction</h2>
+                                    <h2 class="text-capitalize">Accelerating the wind of change in Digital Transaction Platforms</h2>
                                 </div>
-                                <p class="my-3">VISION To accelerate the transformation to achieve a sustainable digital financial eco-system. MISSION To minimize the barriers of digital transaction, and support financial institutions by facilitating their customers/clients with digital payment services.</p>
+                                <p class="my-3">Our vision is to accelerate a transformation to achieve a sustainable digital financial ecosystem. The growth of transactions in Bangladesh shows how we are progressing towards a digital era of Finance. EPS aims to accelerate this enormous pace in order to
+                                     embrace the digital transaction revolution.</p>
                                 <!-- Counter List -->
                                 <!--<div class="counter-list">
                                     <ul>
@@ -453,7 +482,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
             <section class="section download-area ptb_100">
                 <!-- Shapes Container -->
                 <div class="shapes-container d-none d-sm-block">
-                    <div class="shape-2"></div>
+                    <div class="shape-2" style="border-color:#EE2C43"></div>
                     <div class="shape-3"></div>
                 </div>
                 <div class="container">
@@ -493,15 +522,15 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                         <!-- Section Heading -->
                         <div class="col-12 col-md-10 col-lg-6">
                             <!-- Section Heading -->
-                            <div class="section-heading text-center">
+                           {{--  <div class="section-heading text-center">
                                 <h2 class="text-capitalize">Financial News</h2>
                                 <p class="d-none d-sm-block mt-4">Online payment gateways cannot accept money directly from a bank account if it is not connected with debit-credit card/internet banking.</p>
                                 <p class="d-block d-sm-none mt-4">Current online banking system is highly dependent on NPSB by Bangladesh Bank (Not all the banks are connected yet)</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
-                    <div class="row justify-content-center" id="posts" data-wow-duration="2s">
+                    {{-- <div class="row justify-content-center" id="posts" data-wow-duration="2s"> --}}
 
                     </div>
 
@@ -528,7 +557,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
                 </div>
             </section>
 
-@endsection
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="admin/assets/js/moment.js"></script>
@@ -536,7 +565,7 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
     $(document).ready(function () {
         $.ajax({
             type: 'GET',
-            url: 'https://blog.eps.com.bd/wp-json/wp/v2/posts?categories=26&per_page=3&orderby=id',
+            url: 'https://eps.com.bd/blog/wp-json/wp/v2/posts?categories=26&per_page=3&orderby=id',
 
             success: function (data) {
                 var posts_html = '';
@@ -564,3 +593,4 @@ Easy Payment System (EPS) is an innovative payment solution permitted by Banglad
         });
     });
 </script>
+@endsection

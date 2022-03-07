@@ -22,9 +22,9 @@ class CareerCategoryController extends Controller
      public function index()
      {
         $data = CareerCategory::all();
-    
+
          return view('backend.career.category',[
-           
+
             'all_data' => $data
          ]);
      }

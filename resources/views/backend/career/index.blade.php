@@ -82,10 +82,10 @@
     </div>
     <div class="actions">
 
-     <a href="{{ route('feature.edit',$data->id) }}"  class="d-inline bg-primary-light" style="padding-top:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
+     <a href="{{ route('backend-career.edit',$data->id) }}"  class="d-inline bg-primary-light" style="padding-top:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
 
 
-      <form action="{{ route('feature.destroy', $data->id) }}" method="POST" class=" d-inline">
+      <form action="{{ route('backend-career.destroy', $data->id) }}" method="POST" class=" d-inline">
   @include('validate')
           @method('delete')
               @csrf

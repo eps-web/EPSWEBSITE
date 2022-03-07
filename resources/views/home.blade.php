@@ -7,8 +7,7 @@
 @endphp
 
 @section('main-content')
-@include('frontend.layout.partials.header')
-@include('frontend.layout.partials.script')
+
 <div class="page-wrapper">
 
     <div class="content container-fluid">

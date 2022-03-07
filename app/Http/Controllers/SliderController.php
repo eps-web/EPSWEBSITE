@@ -19,7 +19,7 @@ class SliderController extends Controller
 
     public function index()
     {
-      $all_data =SliderSections::orderBy('created_at', 'DESC')->paginate(20);
+      $all_data =SliderSections::orderBy('created_at', 'DESC')->limit(2)->get();
 
 
       return view('backend.slider.index',compact('all_data'));
@@ -136,11 +136,10 @@ class SliderController extends Controller
          }
 
 
-         // dd($request->all());
      $user ->update();
+     // dd($request->all());
         // }
 
-         //  return back();
          return redirect()->route('slider.index')->with('success','Data updated successfully');
     }
 

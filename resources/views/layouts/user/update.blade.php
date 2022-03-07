@@ -48,7 +48,7 @@
 
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-7">User image</label>
+                                    <label class="col-form-label col-md-4">User image</label>
                                     <div class="col-md-4">
                                         <label for="fimg" id="first"><img src="{{ URL::to('admin/assets/img/camera.jpg') }}" style="width:100px;cursor: pointer"/></label>
                                         <input class="form-control" type="file" name="image" id="fimg" style="display: none">
@@ -58,7 +58,7 @@
                                 </div>
 
 
-                                <div class="text-right">
+                                <div class="text-left">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </form>

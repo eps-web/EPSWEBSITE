@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
-use App\Models\AboutUs;
+use App\Models\Aboutus;
 
 class AboutUsController extends Controller
 {
@@ -14,8 +14,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-      $abouts= AboutUs::orderBy('created_at', 'DESC')->paginate(20);
-    return view('layouts.AboutUs.index',compact('abouts'));
+      $abouts= Aboutus::orderBy('created_at', 'DESC')->paginate(20);
+    return view('backend.AboutUs.index',compact('abouts'));
 
     }
 
@@ -26,10 +26,10 @@ class AboutUsController extends Controller
      */
     public function create()
     {
-      $abouts =  Menu::orderby('id','DESC')->first();
+      $abouts =  Aboutus::orderby('id','DESC')->first();
     // $menus = Menu::all();
 
-      return view('layouts.AboutUs.index',compact('abouts'));
+      return view('backend.AboutUs.index',compact('abouts'));
     }
 
     /**
@@ -42,14 +42,28 @@ class AboutUsController extends Controller
     {
       $this -> validate($request,[
 
-          'tittle' => 'required',
+        'tittle' => 'required',
 
+'image'=>'required|image',
 
       ]);
-    $about = AboutUs::create([
-          "tittle" =>$request->tittle,
+    $about =Aboutus::create([
+
+          'tittle' => $request->tittle,
+          'alt_tag' => $request->alt_tag,
+  'descriptions' => $request->descriptions,
+'image'=>'image.png',
         // "url"=>$request->url,
       ]);
+      if($request->has('image')){
+        $image=$request->image;
+        $image_new_name = time().'.'.$image->getClientOriginalName();
+        // return $image_new_name;
+        $image->move('storage/benifits/',$image_new_name);
+        $about->image='/storage/benifits/'.$image_new_name;
+        $about->save();
+      }
+
         return redirect()->route('about.index')->with('success','data save successfully');
     }
 
@@ -101,7 +115,7 @@ class AboutUsController extends Controller
     function about_status_update($id)
   {
   	//get product status with the help of product ID
-  	$abouts = DB::table('about_us')
+  	$abouts = DB::table('aboutuses')
   				->select('status')
   				->where('id','=',$id)
   				->first();
@@ -115,7 +129,7 @@ class AboutUsController extends Controller
 
   	//update product status
   	$values = array('status' => $status );
-  	DB::table('about_us')->where('id',$id)->update($values);
+  	DB::table('aboutuses')->where('id',$id)->update($values);
     //
   	// session()->flash('msg','Product status has been updated successfully.');
     return redirect()->route('about.index');

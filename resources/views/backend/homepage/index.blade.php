@@ -2,7 +2,7 @@
 
 @section('main-content')
 
-
+  
  <div class="page-wrapper">
 
 <div class="content container-fluid">
@@ -208,4 +208,6 @@ $("#close2").click(function()
   $("#appear2").hide();
 });
 </script>
+
+
 @endsection

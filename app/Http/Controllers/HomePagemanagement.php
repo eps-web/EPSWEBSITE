@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 
-use App\Models\HomePage;
+use App\Models\Homepagemanage;
 use Illuminate\Http\Request;
 
 class HomePagemanagement extends Controller
@@ -21,7 +21,7 @@ class HomePagemanagement extends Controller
     {
 
        // $all_data = Features::all();
-       $all_data = HomePage::orderBy('id','DESC')->limit(1)->get();
+       $all_data = Homepagemanage::orderBy('id','DESC')->limit(1)->get();
 
           return view('backend.homepage.index',compact('all_data'));
     }
@@ -53,7 +53,7 @@ class HomePagemanagement extends Controller
 
 
       ]);
-  $post= HomePage::create([
+  $post= Homepagemanage::create([
           'link_apple' => $request->link_apple,
           'link_ggogle' => $request->link_ggogle,
 

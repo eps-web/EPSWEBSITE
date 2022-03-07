@@ -12,7 +12,9 @@
                     <div class="col-sm-12">
                         <h3 class="page-title">Welcome {{ Auth::user()->name }}</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item "><a href="">Dashboard</a></li>
+                            <li class="breadcrumb-item "><a href="{{route('backend-career.index')}}">Career</a></li>
+                              <li class="breadcrumb-item active">Category</li>
                         </ul>
                     </div>
                 </div>

@@ -109,7 +109,8 @@ class CareerController extends Controller
      */
     public function edit($id)
     {
-        //
+      $all_data =  Career::find($id);
+        return view('backend.career.update',compact('all_data'));
     }
 
     /**
@@ -121,7 +122,53 @@ class CareerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this -> validate($request,[
+
+         // 'name' => 'required',
+         'title' => 'required',
+
+
+
+     ]);
+       // dd($request->all());
+     $edit_id = $id;
+    $user = Career::find($edit_id);
+
+    $user-> title = $request->title;
+  $user->  vacancy =$request->vacancy;
+  $user->  job_responsibilities =$request->job_responsibilities;
+  $user->  employment_status =$request->employment_status;
+  $user->  workplace =$request->workplace;
+  $user->  educational_requirement =$request->educational_requirements;
+  $user->  experience_requirements =$request->experience_requirements;
+  $user->  additional_requirements =$request->additional_requirements;
+  $user->  job_location =$request->job_location;
+  $user->  category =$request->cat;
+  $user->  salary =$request->salary;
+
+
+
+  $user->   compensation_other_benefits =$request->compensation_other_benefits;
+  $user->   published_at=Carbon::now();
+
+
+     // $menu -> url = $request->url;
+     if($request->hasFile('image')){
+           $image=$request->image;
+           $image_new_name = time().'.'.$image->getClientOriginalName();
+           // return $image_new_name;
+           $image->move('storage/career/',$image_new_name);
+           $user->image='/storage/career/'.$image_new_name;
+           $user->save();
+         }
+
+
+         // dd($request->all());
+     $user ->update();
+        // }
+
+         //  return back();
+         return redirect()->route('backend-career.index')->with('success','Career updated successfully');
     }
 
     /**
@@ -132,6 +179,9 @@ class CareerController extends Controller
      */
     public function destroy($id)
     {
+      $user_del= Career::find($id);
+      $user_del ->delete();
 
+        return redirect()->back()->with('delete','Data Deleted Successfully');
     }
 }
