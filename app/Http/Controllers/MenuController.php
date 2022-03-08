@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\menu;
+use DB;
 use App\Models\Submenu;
 class MenuController extends Controller
 {
@@ -118,5 +119,30 @@ class MenuController extends Controller
       }
 
       return response('Update Successfully.', 200);
+  }
+
+  function menu_status_change($id)
+  {
+    //get product status with the help of product ID
+    $menu = DB::table('menus')
+          ->select('status')
+          ->where('id','=',$id)
+          ->first();
+
+    //Check user status
+    if($menu->status == '1'){
+      $status = '0';
+    }else{
+      $status = '1';
+    }
+
+    //update product status
+    $values = array('status' => $status );
+    DB::table('menus')->where('id',$id)->update($values);
+    //
+    // session()->flash('msg','Product status has been updated successfully.');
+    return redirect()->route('menu.index');
+
+
   }
 }

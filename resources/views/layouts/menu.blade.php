@@ -66,6 +66,9 @@
     <li class="">
     <a href="{{ route('post.index')}}"><i class="fas fa-list-ul"></i> <span>Blog Page</span></a>
     </li>
+    <li class="{{ (Route::currentRouteName()=='menu.index')? 'ok' : '' }}">
+        <a href="{{route('menu.index')}}"><i class="fas fa-home"></i> <span>Nav Menu</span></a>
+    </li>
     <li class="{{ (Route::currentRouteName()=='backend-career.index')? 'ok' : '' }}"><a href="{{ route('backend-career.index') }}"><i class="fas fa-caret-right"></i> Career</a></li>
     <li class="submenu">
     <a href="#"><i class='fas fa-file'></i> <span>Footer Sections</span> <span class="menu-arrow"></span></a>

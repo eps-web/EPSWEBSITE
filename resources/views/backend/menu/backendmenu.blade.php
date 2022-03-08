@@ -28,22 +28,22 @@
 </head>
 
   <!-- Page Header -->
-  <h4 class="float-left d-inline"><a href="#add_cat" class="btn btn-info" data-toggle="modal">Add Menu</a></h4>
-  <h4 class="float-right d-inline"><a href="#add_sub" class="btn btn-info" data-toggle="modal">Add Sub Menu</a></h4>
-  
+
+
+
 <br>
 
   <!-- /Page Header -->
-  <div class="row mt-5">
-    <div class="body">
-      <div class="row">
+  <div class="body">
+    <div class="row">
 
-        <div class="col-md-6 d-flex">
+
+        <div class="col-md-6 ">
 
           <!-- Feed Activity -->
           <div class="card  card-table flex-fill">
             <div class="card-header">
-              <h4 class="card-title"> menus</h4>
+            <h4 class="float-left d-inline"><a href="#add_menu" class="btn btn-info" data-toggle="modal">Add Menu</a></h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -55,7 +55,8 @@
                         <td class="pl-3"><i class="fa fa-sort"></i></td>
 
                         <td>{{ $post->title}}</td>
-                        <td>{{ $post->url }}</td>
+                        <td>{{ $post->url}}</td>
+
                         <td>
                           <?php if($post->status == '1'){ ?>
 
@@ -88,27 +89,28 @@
           <!-- Feed Activity -->
           <div class="card  card-table flex-fill">
             <div class="card-header">
-              <h4 class="card-title">Sub menus</h4>
+              <h4 class="float-right d-inline"><a href="#add_sub" class="btn btn-info" data-toggle="modal">Add Sub Menu</a></h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-hover table-center mb-0">
 
                   <tbody>
-                    @foreach($submenus as $post)
-                      <tr class="row1" data-id="{{ $post->id }}">
+                    @foreach($submenus as $sub)
+                      <tr class="row2" data-id="{{ $sub->id }}">
                         <td class="pl-3"><i class="fa fa-sort"></i></td>
 
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->url }}</td>
-                        <td>
-                          <?php if($post->status == '1'){ ?>
+                        <td>{{ $sub->title}}</td>
+                        <td>{{ $sub->url}}</td>
 
-                         <a href="{{url('/menu-status',$post->id)}}" class="btn btn-sm btn-success">Active</a>
+                        <td>
+                          <?php if($sub->status == '1'){ ?>
+
+                         <a href="{{url('/submenu-status',$sub->id)}}" class="btn btn-sm btn-success">Active</a>
 
                          <?php }else{ ?>
 
-                           <a href="{{url('/menu-status',$post->id)}}" class="btn btn-sm btn-danger">Inactive</a>
+                           <a href="{{url('/submenu-status',$sub->id)}}" class="btn btn-sm btn-danger">Inactive</a>
 
                          <?php } ?>
 
@@ -142,7 +144,7 @@
 
 
         <!-- // MOdel for Menu Create!-->
-          <div class="modal fade" id="add_cat">
+          <div class="modal fade" id="add_menu">
               <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                       <div class="modal-header">
@@ -192,9 +194,9 @@
                       <button class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
-                      <form action="" method="POST"  class="form-group">
+                      <form action="{{route('submenu.store')}}" method="POST"  class="form-group">
                           @csrf
-                            <input type="text" name="ntitle" class="form-control" placeholder="Sub Menu Name"><br>
+                            <input type="text" name="title" class="form-control" placeholder="Sub Menu Name"><br>
                             <input type="text" name="url" class="form-control" placeholder="Url"><br>
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label"> Main Menu</label>

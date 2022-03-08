@@ -87,7 +87,9 @@ Route::resource('/about','App\Http\Controllers\AboutUsController');
   Route::get('/about-status/{id}',[App\Http\Controllers\AboutUsController::class,'about_status_update']);
   //Menu
   Route::resource('/menu','App\Http\Controllers\MenuController');
+  Route::get('/menu-status/{id}',[App\Http\Controllers\MenuController::class,'menu_status_change']);
   Route::resource('/submenu','App\Http\Controllers\SubMenuController');
+    Route::get('/submenu-status/{id}',[App\Http\Controllers\SubMenuController::class,'submenu_status_change']);
 //Settings
 Route::get('/settings',[App\Http\Controllers\SettingsManagement::class,'settingsView']);
 Route::get('/settings-map',[App\Http\Controllers\SettingsManagement::class,'eps_map']);

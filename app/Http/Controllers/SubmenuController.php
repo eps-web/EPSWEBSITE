@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Models\menu;
 use App\Models\Submenu;
 class SubMenuController extends Controller
@@ -19,8 +20,8 @@ class SubMenuController extends Controller
     public function index()
     {
       // $submenus =  Submenu::all();
-       $submenus= Submenu::orderBy('order','ASC')->get();
-$menus = Menu::all();
+       $submenus= Submenu::orderBy('id','DESC')->get();
+$menus = menu::all();
         return view('backend.menu.backendmenu',compact('submenus','menus'));
     }
 
@@ -31,9 +32,7 @@ $menus = Menu::all();
      */
     public function create()
     {
-        $menus = menu::all();
 
-        return view('backend.menu.submenu',compact('menus'));
     }
 
     /**
@@ -44,11 +43,11 @@ $menus = Menu::all();
      */
     public function store(Request $request)
     {
-      // $this -> validate($request,[
-      //
-      //     'name' => 'required',
-      //     'menu' => 'required',
-      // ]);
+      $this -> validate($request,[
+
+          'title' => 'required',
+
+      ]);
       // dd($request->all());
    Submenu::create([
      'title'=>$request->title,
@@ -56,8 +55,8 @@ $menus = Menu::all();
         'url'=>$request->url,
 
       ]);
-        // dd($request->all());
-      return redirect()->route('submenu.index')->with('success','submenu save successfully');
+            return redirect()->back()->with('success','benifits save successfully');
+      // return redirect()->route('submenu.index')->with('success','submenu save successfully');
     }
 
     /**
@@ -118,5 +117,30 @@ $menus = Menu::all();
         }
 
         return response('Update Successfully.', 200);
+    }
+
+    function submenu_status_change($id)
+    {
+      //get product status with the help of product ID
+      $submenu = DB::table('submenus')
+            ->select('status')
+            ->where('id','=',$id)
+            ->first();
+
+      //Check user status
+      if($submenu->status == '1'){
+        $status = '0';
+      }else{
+        $status = '1';
+      }
+
+      //update product status
+      $values = array('status' => $status );
+      DB::table('submenus')->where('id',$id)->update($values);
+      //
+      // session()->flash('msg','Product status has been updated successfully.');
+      return redirect()->route('submenu.index');
+
+
     }
 }
