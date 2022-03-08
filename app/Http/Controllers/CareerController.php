@@ -139,17 +139,17 @@ class CareerController extends Controller
   $user->  job_responsibilities =$request->job_responsibilities;
   $user->  employment_status =$request->employment_status;
   $user->  workplace =$request->workplace;
-  $user->  educational_requirement =$request->educational_requirements;
+  $user->  educational_requirements =$request->educational_requirements;
   $user->  experience_requirements =$request->experience_requirements;
   $user->  additional_requirements =$request->additional_requirements;
   $user->  job_location =$request->job_location;
-  $user->  category =$request->cat;
+
   $user->  salary =$request->salary;
 
 
 
   $user->   compensation_other_benefits =$request->compensation_other_benefits;
-  $user->   published_at=Carbon::now();
+
 
 
      // $menu -> url = $request->url;

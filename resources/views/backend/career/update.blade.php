@@ -28,7 +28,7 @@
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h4 class="card-title">Update Benifit</h4>
+                            <h4 class="card-title">Update Career</h4>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('backend-career.update',$all_data->id) }}" method="POST" enctype="multipart/form-data">
@@ -42,15 +42,76 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label">Descriptions</label>
+                                    <label class="col-lg-3 col-form-label">vacancy</label>
                                     <div class="col-lg-9">
-                                        <input type="text" name="descriptions" value="{{ $all_data->descriptions }}" class="form-control">
+                                        <input type="text" name="vacancy" value="{{ $all_data->vacancy }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">job_responsibilities</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="job_responsibilities" value="{{ $all_data->job_responsibilities }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">employment_status</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="employment_status" value="{{ $all_data->employment_status }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">employment_status</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="employment_status" value="{{ $all_data->employment_status }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">workplace</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="workplace" value="{{ $all_data->workplace }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">educational_requirements</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="educational_requirements" value="{{ $all_data->educational_requirements }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">experience_requirements</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="experience_requirements" value="{{ $all_data->experience_requirements }}" class="form-control">
+                                    </div>
+                                </div>
+                              
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">additional_requirements</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="additional_requirements" value="{{ $all_data->additional_requirements }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">job_location</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="job_location" value="{{ $all_data->job_location }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">salary</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="salary" value="{{ $all_data->salary }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label">compensation_other_benefits</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" name="compensation_other_benefits" value="{{ $all_data->compensation_other_benefits }}" class="form-control">
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-4">feature image</label>
+                                    <label class="col-form-label col-md-4">Logo</label>
                                     <div class="col-md-4">
 
                                         <input class="form-control" type="file" name="image" id="fimg" style="display: ">

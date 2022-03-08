@@ -20,7 +20,7 @@ class SubMenuController extends Controller
     public function index()
     {
       // $submenus =  Submenu::all();
-       $submenus= Submenu::orderBy('id','DESC')->get();
+       $submenus= Submenu::orderBy('created_at','DESC')->get();
 $menus = menu::all();
         return view('backend.menu.backendmenu',compact('submenus','menus'));
     }
