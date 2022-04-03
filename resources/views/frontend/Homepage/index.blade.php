@@ -25,39 +25,15 @@
                                 <h1 class="respon">Easy Payment System - EPS</h1>
                                 <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
                                 <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution... <a style="font-weight: 600;" href="https://eps.com.bd/about-eps">Read More</a></p>
-<!--
-                                    <a href="#"  id="modal-default"  class="btn btn-bordered" >
-                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
-                                        <p class="dsp-tc">GET IT ON
-                                            <br> <span>Google Play</span></p>
-                                    </a>
-                                    <a href="#" data-toggle="modal" id="modal-default"  class="btn btn-bordered">
-                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
-                                        <p class="dsp-tc">AVAILABLE ON
-                                            <br> <span>Apple Store</span></p>
-                                    </a> -->
 
-                                <!-- <div class="button-group store-buttons"id="search">
-                                    <a  href="#progressBar"  class="btn btn-bordered" >
-                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
-                                        <p class="dsp-tc">GET IT ON
-                                            <br> <span>Google Play</span></p>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
-                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
-                                        <p class="dsp-tc">AVAILABLE ON
-                                            <br> <span>Apple Store</span></p>
-                                    </a>
-                                </div> -->
 
-                                <!--  -->
                                 <div class="button-group store-buttons">
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                  <a href="#progressBarCenter" data-toggle="modal"  class="btn btn-bordered">
                                         <i class="icofont icofont-brand-android-robot dsp-tc"></i>
                                         <p class="dsp-tc">GET IT ON
                                             <br> <span>Google Play</span></p>
                                     </a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                    <a href="#progressBarCenter" data-toggle="modal"  class="btn btn-bordered">
                                         <i class="icofont icofont-brand-apple dsp-tc"></i>
                                         <p class="dsp-tc">AVAILABLE ON
                                             <br> <span>Apple Store</span></p>
@@ -65,6 +41,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-12 col-md-3 col-lg-6 row">
                             <!-- Welcome Thumb -->
                             {{-- <div class="welcome-thumb text-center" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"> --}}
@@ -172,12 +149,12 @@
                                 <p class="my-3"><p class="my-3" style="margin-right: 0px; margin-left: 0px; padding: 0px; font-size: 14px; line-height: 1.8; color: rgb(119, 119, 119); font-family: Poppins, sans-serif;">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system. Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p><p class="d-none d-sm-block my-3" style="margin-right: 0px; margin-left: 0px; padding: 0px; font-size: 14px; line-height: 1.8; color: rgb(119, 119, 119); font-family: Poppins, sans-serif;">EPS is developed by Optimum Solution and Services Ltd. (OSSL), a global technology solution provider.</p></p>
                                 <!-- Store Buttons -->
                                 <div class="button-group store-buttons">
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                    <a href="#progressBarCenter" data-toggle="modal" class="btn btn-bordered">
                                         <i class="icofont icofont-brand-android-robot dsp-tc"></i>
                                         <p class="dsp-tc">GET IT ON
                                             <br> <span>Google Play</span></p>
                                     </a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                    <a href="#progressBarCenter" data-toggle="modal" class="btn btn-bordered">
                                         <i class="icofont icofont-brand-apple dsp-tc"></i>
                                         <p class="dsp-tc">AVAILABLE ON
                                             <br> <span>Apple Store</span></p>
@@ -490,7 +467,7 @@
                             </div>
                             <!-- Start Free Button -->
                             <div class="start-free-btn mt-4 mt-lg-0">
-                                <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Try EPS Now</span></a>
+                                <a href="#progressBarCenter" data-toggle="modal"  class="btn btn-bordered"><span>Try EPS Now</span></a>
                             </div>
                         </div>
                     </div>
@@ -518,12 +495,12 @@
                                 <!-- Store Buttons -->
 
                                 <div class="button-group store-buttons">
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                    <a href="#progressBarCenter" data-toggle="modal"  class="btn btn-bordered">
                                         <i class="icofont icofont-brand-android-robot dsp-tc"></i>
                                         <p class="dsp-tc">GET IT ON
                                             <br> <span>Google Play</span></p>
                                     </a>
-                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                    <a href="#progressBarCenter" data-toggle="modal" class="btn btn-bordered">
                                         <i class="icofont icofont-brand-apple dsp-tc"></i>
                                         <p class="dsp-tc">AVAILABLE ON
                                             <br> <span>Apple Store</span></p>
@@ -580,39 +557,20 @@
                 </div>
             </section>
 
-                <div class="modal fade" id="modal-default" style="text-align:center;">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
 
-
-                        <div class="modal-body" style="padding-bottom: 20px">
-                          <div class="contentBox">
-                            <div id="imageBox"><button class="btn btn-sm" >X</button >
-                              <img  src="frontend/images/modal.png" alt="">
-
-                              </div>
-                              </div>
-                        </div>
-
-
-                      <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                  </div>
-                  <!-- /.modal -->
-
-<!-- Modal ProgressBar -->
-<div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="progressBarCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<!-- Download Modal -->
+<div class="modal fade" id="progressBarCenter" tabindex="-1" role="dialog" aria-labelledby="progressBarCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-body">
-  <div class="contentBox">
-    <div id="imageBox"> <button class="btn" style="color:white;">x</button >
-      <img  src="frontend/images/modal.png" alt="">
-
+    <div class="popup_data">
+      <div id="imageBox"  style="width: 600px;"><button class="btn" style="padding-left:560px;" >x</button >
+            <img  src="frontend/images/pop.png"alt="">
+        </div>
       </div>
-      </div>
-    </div>
   </div>
 </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
@@ -659,39 +617,19 @@
 </script>
 
 
+
 <script>
 
-$(document).ready(function(){
-          $(".popup_data").hide();
-          $('#modal-default').click(function(){
-           if ($(".popup_data").css("display") == "none") {
-               $(".popup_data").show();
-            } else {
-               $(".popup_data").hide();
-            }
-          });
-        });
-        $(document).ready(function(){
-          var timeout;
-          $("#modal-default").click(function() {
-            if($('.popup_data ').is(':visible')){
-            timeout = startTimer();
-            }
-          $('body').on('focus', 'select', () => {
-           window.clearTimeout(timeout);
-          });
-          $('body').on('blur', 'select', () => {
-           window.clearTimeout(timeout);
-           timeout = startTimer();});
-          });
-});
+    const modal  = document.querySelector('#progressBarCenter');
 
-const startTimer = () => (
- window.setTimeout(function(){
- $('.popup_data ').stop().fadeOut('medium');
- }, 3000)
-);
+
+    setTimeout(function(){
+        $('#progressBarCenter').modal('hide');
+        },5000)
+
+    // window.onload=function(){
+
+    // }
 </script>
-
 
 @endsection

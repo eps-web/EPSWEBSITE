@@ -82,38 +82,35 @@ body {
     font-weight: 400;
     color: #777;
 }
-.modal{
- position:fixed;
- /* top: ;
- left: %; */
+
+.popup_data {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: ; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
-.modal-ACTIVE{
-visibility: visible;
-opacity: 1;
-}
-.contentBox{
-    display: flex;
-}
+
+
 #imageBox  img{
     position:relative;
-    border-radius: 15px;
-    /* left: 5%;  */
-    width: 500px;
-    height: 200px;
+    border-radius: 10px;
+
+
+    height: 300px;
     display: flex;
 }
 #imageBox .btn{
-    position:absolute;
-    top: 20%;
-    left: 60%;
-    transform: translate(-50%,-50%);
-    color:white;
-    border-radius:10px;
+  position:absolute;
+    /* top: 10%;
+    left: 90%; */
+  top: 5%;
+
+    /* transform: translate(-5%,-3%); */
+color:white;
+
     background: none;
-      /* width: 1px ;
-      height: 5px; */
-    /* height: 5px;
-    width: 10px */
+
 }
 /* .imageBox .close{
     position:relative;
@@ -123,15 +120,7 @@ opacity: 1;
     height: 354px;
     display: flex;
 } */ */
-.animate__animated.animate__bounce {
-  --animate-duration: 2s;
-}
 
-/* This changes all the animations globally */
-:root {
-  --animate-duration: 800ms;
-  --animate-delay: 0.9s;
-}
 .all-area {
     overflow: hidden;
 }
