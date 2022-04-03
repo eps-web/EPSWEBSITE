@@ -5,6 +5,9 @@ use App\Models\Career;
 use App\Models\CareerCategory;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+
+use Spatie\Permission\Models\Permission;
+
 class CareerController extends Controller
 {
     /**
@@ -12,6 +15,14 @@ class CareerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     function __construct(Permission $permission)
+         {
+
+             $this->middleware('role_or_permission:Permission access|Permission create|Permission edit|Permission delete', ['only' => ['index','create']]);
+             $this->middleware('role_or_permission:Permission create', ['only' => ['create','store']]);
+             $this->middleware('role_or_permission:Permission edit', ['only' => ['edit','update']]);
+             $this->middleware('role_or_permission:Permission delete', ['only' => ['destroy']]);
+         }
     public function index()
     {
       $all_data = Career::orderBy('id','DESC')->paginate(4);
@@ -65,7 +76,8 @@ class CareerController extends Controller
              'experience_requirements' =>$request->experience_requirements,
              'additional_requirements' =>$request->additional_requirements,
              'job_location' =>$request->job_location,
-             "category" =>$request->cat,
+             'category' =>$request->category,
+             'deadline' =>$request->deadline,
              'salary' =>$request->salary,
              'alt_tag' => $request->alt_tag,
              'image'=>'image.jpg',
@@ -143,6 +155,7 @@ class CareerController extends Controller
   $user->  experience_requirements =$request->experience_requirements;
   $user->  additional_requirements =$request->additional_requirements;
   $user->  job_location =$request->job_location;
+  $user->  deadline =$request->deadline;
 
   $user->  salary =$request->salary;
 
@@ -184,4 +197,25 @@ class CareerController extends Controller
 
         return redirect()->back()->with('delete','Data Deleted Successfully');
     }
+    public function careerviewcategory($slug)
+    {
+      if(CareerCategory::where('slug',$slug)->exists())
+      {
+
+        $category=CareerCategory::where('slug',$slug)->first();
+            $career=Career::where('category',$category->id)->get();
+            return view('backend.career.catView',compact('category','career'));
+      }
+      else
+      {
+         return redirect()->back()->with('success','slug not!!');
+      }
+
+    }
+    public function careerview($id)
+    {
+        return view('backend.career.View');
+
+    }
+
 }

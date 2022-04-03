@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\SliderSections;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use DB;
 
@@ -12,10 +13,12 @@ class SliderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+     function __construct(Permission $permission)
+         {
+
+                  $this->middleware('auth');
+         }
+
 
     public function index()
     {

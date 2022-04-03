@@ -48,20 +48,16 @@
                                     </div>
                                 </div>
 
-
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-4">feature image</label>
                                     <div class="col-md-4">
 
                                         <input class="form-control" type="file" name="image" id="fimg" style="display: ">
-                                        <img src="{{$all_data->image}}" alt="" id="feather_img" style="max-width:30%;display:block">
-                   <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
+                                        <img src="{{ asset($all_data->image) }}" alt="" id="feather_img"  width="70px" height="70px" style="display:block">
+                                      <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
                                     </div>
                                 </div>
-
-
-
-
+                              
                                 <div class="text-left">
                                     <button type="submit" class="float-left  btn-sm btn-primary" style="background-color:#0DB4F;">Update</button>
                                 </div>

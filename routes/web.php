@@ -74,13 +74,18 @@ Route::resource('post','App\Http\Controllers\postController');
 
 //benifit
 Route::resource('/benifit','App\Http\Controllers\BenifitController');
+Route::post('uploadImage',[App\Http\Controllers\BenifitController::class,'updateImage'])->name('upload.image');
 Route::get('/benifit-status-change/{id}',[App\Http\Controllers\BenifitController::class,'benifit_status_change']);
 //features section
 Route::resource('/feature','App\Http\Controllers\FeatureController');
 Route::get('/feature-status-change/{id}',[App\Http\Controllers\FeatureController::class,'feature_status_change']);
 //Career Section
 Route::resource('/backend-career','App\Http\Controllers\CareerController');
+Route::get('/backend-career/{id}',[App\Http\Controllers\CareerController::class,'careerview']);
+
+Route::get('/career-view-category/{slug}',[App\Http\Controllers\CareerController::class,'careerviewcategory']);
 Route::resource('/careerCategory','App\Http\Controllers\CareerCategoryController');
+Route::get('/view-category/{slug}',[App\Http\Controllers\CareerCategoryController::class,'viewcategory']);
 
 //About us
 Route::resource('/about','App\Http\Controllers\AboutUsController');
@@ -97,7 +102,10 @@ Route::put('/settingsUpdate',[App\Http\Controllers\SettingsManagement::class,'se
 Route::get('/settings-logo',[App\Http\Controllers\SettingsManagement::class,'settingsLogo'])->name('settings-logo.index');
 Route::post('/settings-logo',[App\Http\Controllers\SettingsManagement::class,'store'])->name('settings-logo.store');
 Route::resource('user','App\Http\Controllers\UserManagement');
-Route::get('/status-change/{id}',[App\Http\Controllers\UserManagement::class,'status_change']);
+Route::get('/status-change/{id}',[App\Http\Controllers\UserManagement::class,'user_status_change']);
+Route::get('/role-view/{slug}',[App\Http\Controllers\RoleController::class,'roleview']);
+Route::get('/admin-view/{slug}',[App\Http\Controllers\RoleController::class,'adminview']);
+
 //Frontend vierw Management
 
 Route::get('/',[App\Http\Controllers\frontendViewManagement::class,'HomePageManage']);
@@ -152,3 +160,15 @@ Route::get('/blog-tag-search/{slug}',[App\Http\Controllers\frontendViewManagemen
 Route::get('/blog-category-search/{slug}',[App\Http\Controllers\frontendViewManagement::class,'Blog_search_by_category']) ->name('blog.search.category');
 //blog post Search
 Route::get('/blog-search',[App\Http\Controllers\frontendViewManagement::class,'BlogSearch']) ->name('blog.search');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::resource('role', 'App\Http\Controllers\RoleController');
+    Route::resource('permission', 'App\Http\Controllers\PermissionController');
+
+
+
+
+
+});

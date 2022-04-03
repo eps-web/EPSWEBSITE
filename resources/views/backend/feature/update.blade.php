@@ -67,7 +67,7 @@
 
                                         <input class="form-control" type="file" name="image" id="fimg" style="display: ">
                                         <img src="{{$all_data->image}}" alt="" id="feather_img" style="max-width:30%;display:block">
-  <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
+                                      <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
                                     </div>
                                 </div>
 

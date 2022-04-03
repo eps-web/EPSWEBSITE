@@ -14,7 +14,7 @@
                     <ul class="breadcrumb">
 
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('backend-home.index')}}">Benifit</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('backend-career.index')}}">Career</a></li>
                         <li class="breadcrumb-item active">Update</li>
                       </ul>
                 </div>
@@ -83,7 +83,7 @@
                                         <input type="text" name="experience_requirements" value="{{ $all_data->experience_requirements }}" class="form-control">
                                     </div>
                                 </div>
-                              
+
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">additional_requirements</label>
                                     <div class="col-lg-9">

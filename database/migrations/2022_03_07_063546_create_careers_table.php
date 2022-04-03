@@ -26,6 +26,7 @@ class CreateCareersTable extends Migration
             $table->string('additional_requirements');
             $table->string('job_location');
             $table->string('salary');
+            $table->string('deadline');
               $table->integer('category')->nullable();
             $table->string('image');
             $table->string('alt_tag');

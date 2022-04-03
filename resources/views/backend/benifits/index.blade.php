@@ -25,7 +25,7 @@
                @include('validate')
               <div class="d-flex justify-content-between align-items-center">
                   <h3 class="card-title">Benifit Section</h3>
-                 <h4 class="float-left d-inline"><a href="#add_benifit" class="btn btn-info" data-toggle="modal">Add Benifit</a></h4>
+                @can('add benifit')   <h4 class="float-left d-inline"><a href="#add_benifit" class="btn btn-info" data-toggle="modal">Add Benifit</a></h4>  @endcan
 
               </div>
           </div><br>
@@ -66,7 +66,7 @@
                            <div class="benifits-item text-center p-3">
 
                                <div class="feature-icon">
-                                   <img src="{{$data->image}}" alt="{{$data->alt_tag}}">
+                                   <img src="{{asset($data->image)}}" alt="{{$data->alt_tag}}">
                                </div>
                                <!-- Benifits Text -->
                                <div class="benifits-text">

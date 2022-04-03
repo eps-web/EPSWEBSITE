@@ -24,7 +24,7 @@
 
         <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="card flex-fill">
                         <div class="card-header">
 
@@ -66,25 +66,22 @@
                                 </div>
 
 
-
                                 <div class="form-group row">
                                       <label class="col-form-label col-md-3">User Role</label>
                                       <div class="col-md-9">
 
-                                          <select class="form-control post_tag_select" name="role">
+                                        <select name="role" id="" class="form-control">
+                                            <option value="" style="display: none" selected>Select Role</option>
 
+                                            @foreach($role as $c)
+                                            @if ((Auth::user()->user_role == 'superadmin'))
 
-                                              <option   value="">Role</option>
-                                              <option   value="editor">Editor</option>
-                                              <option   value="viewer">Viewer</option>
-                                              <option  value="hr">HR</option>
-                                              <option  value="admin">Admin</option>
-                                                  @if ((Auth::user()->user_role == 'superadmin'))
-                                              <option  value="superadmin">Super Admin</option>
-                                              @endif
-
-                                          </select>
-
+                                                <option value="{{ $c->slug }}"> {{ $c->slug }} </option>
+                                            @else
+                                            <option value="{{ $c->slug }}"> {{ $c->slug }} </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
 
                                       </div>
                                   </div>
@@ -112,6 +109,8 @@
                         </div>
                     </div>
                 </div>
+
+
         </div>
 
     </div>

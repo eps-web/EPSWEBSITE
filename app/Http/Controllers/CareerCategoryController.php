@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\CareerCategory;
+use App\Models\Career;
 use Str;
 use Illuminate\Http\Request;
 
@@ -21,11 +22,11 @@ class CareerCategoryController extends Controller
 
      public function index()
      {
-        $data = CareerCategory::all();
+        $cate = CareerCategory::all();
 
          return view('backend.career.category',[
 
-            'all_data' => $data
+            'category' => $cate
          ]);
      }
 
@@ -105,4 +106,22 @@ class CareerCategoryController extends Controller
     {
         //
     }
+    public function viewcategory($slug)
+    {
+      if(CareerCategory::where('slug',$slug)->exists())
+      {
+
+        $category=CareerCategory::where('slug',$slug)->first();
+            $career=Career::where('category',$category->id)->get();
+            return view('backend.career.catView',compact('category','career'));
+      }
+      else
+      {
+         return redirect()->back()->with('success','slug not!!');
+      }
+
+    }
+
+
+
 }

@@ -4,7 +4,10 @@
 <!-- ***** All CSS Files ***** -->
 
 {{-- Canonical Url --}}
-
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <link rel="canonical" href="@yield('canonical_url')" />
 
 <!-- Style css -->

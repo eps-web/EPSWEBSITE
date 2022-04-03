@@ -45,19 +45,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($all_data as $data)
-
+                                    @foreach ($category as $cate)
 
                                     <tr>
                                         <td>{{ $loop -> index+1 }}</td>
-                                        <td>{{ $data->name}}</td>
 
-
+                                        <td>{{ $cate->name}}</td>
                                         <td>
-                                            {{-- <a href="#" class="btn btn-sm btn-success"><i class="fa fa-eye" aria-hidden="true"></i> --}}
-                                            {{-- </a> --}}
-                                            <a href="#" edit_id="{{ $data->id }}" data-toggle="modal" class="btn btn-sm btn-warning update_cat" data-toggle="tooltip modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                            <form action="{{ route('postCategory.destroy', $data->id) }}" method="POST" class="d-inline">
+                                          <a href="{{url('view-category/'.$cate->slug)}}" class="btn btn-sm btn-success">{{ $cate->name}}
+                                             </a>
+                                            <a href="#" edit_id="{{ $cate->id }}" data-toggle="modal" class="btn btn-sm btn-warning update_cat" data-toggle="tooltip modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                            <form action="{{ route('postCategory.destroy', $cate->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                             <button class=" btn btn-sm btn-danger del_button" data-toggle="tooltip" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button>

@@ -19,74 +19,84 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            <div class="card-header">
-                 @include('validate')
-                <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="card-title">User panel</h3>
-                   <h4 class="float-left d-inline"><a href="{{ route('user.create') }}" class="btn btn-info" data-toggle="">Add User</a></h4>
 
-                </div>
-            </div><br>
+            <h3 class="card-title">User Panel</h3>
+            @include('validate')
+          <br>
+            <div class="card-tools">
 
+              @can('Role create')
+              <a class="float-right d-inline btn btn-primary" href="{{ route('role.create') }}" ><i class="fas fa-plus-circle"></i> Create new Role</a>
+              @endcan
+                @can('User create')
+                <a href="{{ route('user.create') }}" class="float-right d-inline btn btn-primary"><i class="fas fa-plus-circle"></i> Add new User</a>
+                @endcan
+            </div>
 
             <div class="body">
-              @if ((Auth::user()->user_role == 'superadmin'))
+
+              @if ((Auth::user()->user_role == ['user_id=1','superadmin']))
               <div class="row">
                 <div class="col-md-12">
-                <button type="button" id="order" class="btn btn-md btn-primary float-left d-inline " class="see" style="width:145px; border-radius:16px;margin-right:5px;">Admin</button>
+
+                  @foreach($role as $data)
 
 
-                <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-                Editor
-                 </button>
-
-                <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-            Viwer
-                 </button>
-
-                <button type="submit" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-            Hr
-                 </button>
-
-
+            <a href="{{url('role-view/'.$data->slug)}}" class="btn btn-md btn-primary float-left d-inline"
+            style="background-color: #00d0f1;
+            border: 1px solid #00d0f1;
+            margin: 2px;
+            border-radius: 10px;
+            width: 106px;"value="">
+            {{ $data->name}}</a>
+            @endforeach
 
         </div>
+
               </div>
                 @endif
+                <div class="row">
+                  <div class="col-md-12">
+                @foreach($role as $data)
               @if ((Auth::user()->user_role == 'admin'))
-                  <div class="row">
-                    <div class="col-md-12">
-                    <button type="button" id="order" class="btn btn-md btn-primary float-left d-inline " class="see" style="width:145px; border-radius:16px;margin-right:5px;">Admin</button>
-
-
-                    <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-                    Editor
-                     </button>
-
-                    <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-                Viwer
-                     </button>
-
-                    <button type="submit" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:145px; border-radius:16px;margin-right:5px;">
-                Hr
-                     </button>
 
 
 
-            </div>
-                  </div>
 
+                      <a href="{{url('role-view/'.$data->slug)}}" class="btn btn-md btn-primary float-left d-inline"
+                      style="background-color: #00d0f1;
+                      border: 1px solid #00d0f1;
+                      margin: 2px;
+                      border-radius: 10px;
+                      width: 106px;">
+                      {{ $data->name}}</a>
+
+            @else
+            <a href="{{url('role-view/'.$data->slug)}}" class="btn btn-md btn-primary float-left d-inline"
+            style="background-color: #00d0f1;
+            border: 1px solid #00d0f1;
+            margin: 2px;
+            border-radius: 10px;
+            width: 106px;">
+            {{ $data->name}}</a>
             @endif
+            @endforeach
+
+          </div>
+
+        </div>
   <br><br>
-                <div class="col-md-10">
+  <div class="row">
+                <div class="col-md-6">
                 <section class="comp-section comp-cards">
                   <div class="row">
                    @foreach ($all_data as $data)
-                   <div class=" col-md-4 ">
+                   <div class=" col-md-6 ">
                      <div class="card flex-fill">
                        <img alt="Card Image" src="{{ asset($data->image) }}" class="card-img-top">
                        <div class="card-header">
                          <h5 class="card-title mb-0">{{ $data->name }}</h5>
+                         <h5 class="card-title mb-0">{{ $data->super_name }}</h5>
                          <p class="card-text">{{ $data->user_role}}</p>
                                           <a class="card-link " href="https://webmail.gigared.com/"><i class="fa fa-google"></i></a>
                        </div>
@@ -106,7 +116,7 @@
                              <a href="{{ route('user.edit',$data->id) }}"  class="btn-sm  float-right d-inline" style="padding-top:5px;" data-toggle="tooltip" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
                            </div>
                            <div class="status-toggle float-right" >
-                             <?php if($data->status == 'active'){ ?>
+                             <?php if($data->status == '1'){ ?>
 
                                <a href="{{url('/status-change',$data->id)}}" class="btn btn-sm btn-success">Active</a>
 
@@ -122,6 +132,90 @@
                      @endforeach
                   </section>
                 </div>
+                </div>
+
+            <div class="col-md-5">
+                <div class="card flex-fill">
+                    <div class="card-header">
+
+                        <h4 class="card-title">Create  User</h4>
+
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" name="super_name"  class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Email</label>
+                                <div class="col-lg-9">
+                                    <input type="text" name="email"  class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Phone</label>
+                                <div class="col-lg-9">
+                                    <input type="text" name="phone"  class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Image</label>
+                                <div class="col-lg-9">
+                                  <input class="form-control" type="file" name="image" id="fimg" style="">
+                                  <img src="" alt="" id="feather_img" style="max-width:30%;display:block">
+                                  <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
+                                </div>
+                            </div>
+
+
+
+
+                              <div class="col-6 col-sm-6" >
+                                <div class="form-group">
+                                    <label>  Role</label>
+                                    <select name="role" id="" class="form-control">
+                                        <option value="" style="display: none" selected>Select Role</option>
+                                        @foreach($role as $c)
+                                        <option value="{{ $c->id }}"> {{ $c->name }} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                              </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Password</label>
+                                <div class="col-lg-9">
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">Confirm Password</label>
+                                <div class="col-lg-9">
+                                    <input type="password" name="conf_password" class="form-control">
+                                </div>
+                            </div>
+
+
+
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
                 </div>
 </div>
 

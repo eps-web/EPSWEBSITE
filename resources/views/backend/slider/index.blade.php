@@ -53,14 +53,15 @@
                    @include('validate')
                   <div class="d-flex justify-content-between align-items-center">
                       <h3 class="card-title">Slider Section</h3>
-                     <h4 class="float-left d-inline"><a href="#add_slider" class="btn btn-info" data-toggle="modal">Add Slider</a></h4>
+                     @can('slider create')<h4 class="float-left d-inline"><a href="#add_slider" class="btn btn-info" data-toggle="modal">Add Slider</a></h4>@endcan
 
                   </div>
               </div>
               <div class="card-body">
+                @can('slider access')
 
                 <section class="section work-area ptb_100">
-                    <div class="container">
+
                     <!-- Work Slider Wrapper -->
                     <div class="work-wrapper d-none d-md-block">
                         <div class="work-slider-wrapper" data-aos="zoom-in">
@@ -83,9 +84,9 @@
 
                         <!-- Work Content -->
                         <div class="row justify-content-end justify-content-lg-between work-content" id="work-slider-pager">
-                              @foreach($all_data as $data)
                             <div class="col-12 col-sm-6">
                                 <a href="#" class="pager-item active">
+                                  @foreach($all_data as $data)
                                     <!-- Single Work -->
                                     <div class="single-work d-inline-block text-center p-4">
                                         <h3 class="mb-2">{{$data->title}}</h3>
@@ -94,8 +95,8 @@
 
                                         <div class="actions">
 
-                                         <a href="{{ route('slider.edit',$data->id) }}"  class=" float-left bg-primary-light" style="padding-top:3px;margin-right: 4px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
-
+                                         @can('slider edit')<a href="{{ route('slider.edit',$data->id) }}"  class=" float-left bg-primary-light" style="padding-top:3px;margin-right: 4px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                         @endcan
 
                                         </div>
 
@@ -111,18 +112,20 @@
                                             <?php } ?>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </a>
                             </div>
 
-                            @endforeach
                         </div>
-                    </div>
+
                 </section>
 
+                @endcan
               </div>
             </div>
           </div>
             </div>
+
             <!-- Add Modal -->
     <div class="modal fade" id="add_slider" aria-hidden="true" role="dialog">
       <div class="modal-dialog modal-dialog-centered" role="document" >

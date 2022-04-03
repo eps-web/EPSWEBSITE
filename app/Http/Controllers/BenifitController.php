@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Benifit;
 use  DB;
+use  Image;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class BenifitController extends Controller
@@ -47,26 +49,32 @@ class BenifitController extends Controller
       $this -> validate($request,[
 
           'title' => 'required',
-          'image'=>'required|image',
+          'image'=>'required|image|mimes:jpg,jpeg,png',
           'alt_tag'=>'required',
 
       ]);
+
+
+      if($request->hasFile('image'))
+      {
+
+        $file=$request->file('image');
+        $extention = $file->getClientOriginalName();
+        $filename = time().'.'.$extention;
+        // return $image_new_name;
+        $file->move('storage/benifits/',$filename);
+        $resizedImage =Image::make(public_path('storage/benifits/'.$filename))
+        ->fit(86,80)->save();
+      }
   $post= Benifit::create([
           'title' => $request->title,
           'descriptions' => $request->descriptions,
           'alt_tag' => $request->alt_tag,
-          'image'=>'image.png',
+          'image'=>'storage/benifits/'.$filename,
 
       ]);
 
-      if($request->has('image')){
-        $image=$request->image;
-        $image_new_name = time().'.'.$image->getClientOriginalName();
-        // return $image_new_name;
-        $image->move('storage/benifits/',$image_new_name);
-        $post->image='/storage/benifits/'.$image_new_name;
-        $post->save();
-      }
+
 
       // return redirect()->back();
           return redirect()->back()->with('success','benifits save successfully');
@@ -94,6 +102,7 @@ class BenifitController extends Controller
     {
       $all_data = Benifit::find($id);
         return view('backend.benifits.update',compact('all_data'));
+
     }
 
     /**
@@ -105,35 +114,44 @@ class BenifitController extends Controller
      */
     public function update(Request $request, $id)
     {
+
       $this -> validate($request,[
 
-          // 'name' => 'required',
-          'title' => 'required',
+           // 'name' => 'required',
+           'title' => 'required',
 
+        'image'=>'required|image|mimes:jpg,jpeg,png',
 
-      ]);
-      $edit_id = $id;
-     $user = Benifit::find($edit_id);
-      $user-> title = $request->title;
-      $user-> descriptions = $request->descriptions;
+       ]);
+       $edit_id = $id;
+      $all_data = Benifit::find($edit_id);
+       if($request->hasFile('image'))
+       {
 
+        $destination =$all_data->image;
+             if(File::exists($destination))
+             {
+                 File::delete($destination);
+             }
+         $file=$request->file('image');
+         $extention = $file->getClientOriginalName();
+         $filename = time().'.'.$extention;
+         // return $image_new_name;
+         $file->move('storage/benifits/',$filename);
+         $resizedImage =Image::make(public_path('storage/benifits/'.$filename))
+         ->fit(84,80)->save();
 
-      // $menu -> url = $request->url;
-      if($request->hasFile('image')){
-            $image=$request->image;
-            $image_new_name = time().'.'.$image->getClientOriginalName();
-            // return $image_new_name;
-            $image->move('admin/storage/benifit/',$image_new_name);
-            $user->image='/admin/storage/benifit/'.$image_new_name;
-            $user->save();
-          }
+       }
 
+       $edit_id = $id;
+      $all_data = Benifit::find($edit_id);
 
-      $user ->update();
-         // }
+       $all_data-> title = $request->title;
+       $all_data-> descriptions = $request->descriptions;
+       $all_data-> image ='storage/benifits/'.$filename;
 
-          //  return back();
-          // dd($request->all());
+       $all_data ->update();
+
           return redirect()->route('benifit.index')->with('success','Benifit updated successfully');
     }
 
@@ -143,10 +161,16 @@ class BenifitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
       $user_del= Benifit::find($id);
-      $user_del ->delete();
+        $destination =$user_del->image;
+       if(File::exists($destination))
+       {
+           File::delete($destination);
+       }
+       $user_del->delete();
 
         return redirect()->back()->with('delete','Data Deleted Successfully');
     }

@@ -45,17 +45,18 @@
                                     </div>
                                 </div>
 
-
-
                                 <div class="form-group row">
-                                    <label class="col-form-label col-md-4">User image</label>
+                                    <label class="col-form-label col-md-4">feature image</label>
                                     <div class="col-md-4">
-                                        <label for="fimg" id="first"><img src="{{ URL::to('admin/assets/img/camera.jpg') }}" style="width:100px;cursor: pointer"/></label>
-                                        <input class="form-control" type="file" name="image" id="fimg" style="display: none">
-                                        <img src="" alt="" id="feather_img" style="max-width:30%;display:block">
-                                        <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
+
+                                        <input class="form-control" type="file" name="image" id="fimg" style="display: ">
+                                        <img src="{{$all_data->image}}" alt="" id="feather_img" style="max-width:30%;display:block">
+                   <label for="fimg" style="display: none;margin-bottom: 15px" id="second"><span class="btn btn-primary mt-2 "> Change Image</span></label>
                                     </div>
                                 </div>
+
+
+                              
 
 
                                 <div class="text-left">

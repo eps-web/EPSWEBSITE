@@ -82,7 +82,56 @@ body {
     font-weight: 400;
     color: #777;
 }
+.modal{
+ position:fixed;
+ /* top: ;
+ left: %; */
+}
+.modal-ACTIVE{
+visibility: visible;
+opacity: 1;
+}
+.contentBox{
+    display: flex;
+}
+#imageBox  img{
+    position:relative;
+    border-radius: 15px;
+    /* left: 5%;  */
+    width: 500px;
+    height: 200px;
+    display: flex;
+}
+#imageBox .btn{
+    position:absolute;
+    top: 20%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    color:white;
+    border-radius:10px;
+    background: none;
+      /* width: 1px ;
+      height: 5px; */
+    /* height: 5px;
+    width: 10px */
+}
+/* .imageBox .close{
+    position:relative;
+    border-radius: 15px;
+    /* left: 5%;  */
+    /* width: 744px;
+    height: 354px;
+    display: flex;
+} */ */
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
 
+/* This changes all the animations globally */
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
 .all-area {
     overflow: hidden;
 }

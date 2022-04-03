@@ -25,10 +25,32 @@
                                 <h1 class="respon">Easy Payment System - EPS</h1>
                                 <span class="fw-3 mt-2 mt-sm-3" style="font-weight:500">Easy Solution for all transaction</span>
                                 <p class="my-3">Easy Payment Solution (EPS) is an innovative payment solution aimed to make digital transactions effortless. Permitted by Bangladesh Bank as a Payment System Operator (PSO), EPS enables mass people with an easy and instant payment solution... <a style="font-weight: 600;" href="https://eps.com.bd/about-eps">Read More</a></p>
-                              {{--   <div class="button-group">
-                                    <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-bordered"><span>Download</span></a>
-                                    <a href="{{ route('frontend.aboutUs') }}"   class="btn btn-bordered d-none d-sm-inline-block">Read More</a>
-                                </div> --}}
+<!--
+                                    <a href="#"  id="modal-default"  class="btn btn-bordered" >
+                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                        <p class="dsp-tc">GET IT ON
+                                            <br> <span>Google Play</span></p>
+                                    </a>
+                                    <a href="#" data-toggle="modal" id="modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                        <p class="dsp-tc">AVAILABLE ON
+                                            <br> <span>Apple Store</span></p>
+                                    </a> -->
+
+                                <!-- <div class="button-group store-buttons"id="search">
+                                    <a  href="#progressBar"  class="btn btn-bordered" >
+                                        <i class="icofont icofont-brand-android-robot dsp-tc"></i>
+                                        <p class="dsp-tc">GET IT ON
+                                            <br> <span>Google Play</span></p>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
+                                        <i class="icofont icofont-brand-apple dsp-tc"></i>
+                                        <p class="dsp-tc">AVAILABLE ON
+                                            <br> <span>Apple Store</span></p>
+                                    </a>
+                                </div> -->
+
+                                <!--  -->
                                 <div class="button-group store-buttons">
                                     <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                         <i class="icofont icofont-brand-android-robot dsp-tc"></i>
@@ -494,6 +516,7 @@
                                 <p class="my-3">Easy Payment System (EPS) is an innovative payment solution permitted by Bangladesh Bank as a Payment System Operator (PSO). EPS eases the transaction providing services including fund transfer, merchant payment, bill payment, balance enquiry, mobile top-up, etc.</p>
                                 <p class="d-none d-sm-block my-3">EPS strives to make digital transaction effortless by enabling mass people with an easy and instant payment system.</p>
                                 <!-- Store Buttons -->
+
                                 <div class="button-group store-buttons">
                                     <a href="#" data-toggle="modal" data-target="#modal-default"  class="btn btn-bordered">
                                         <i class="icofont icofont-brand-android-robot dsp-tc"></i>
@@ -522,15 +545,15 @@
                         <!-- Section Heading -->
                         <div class="col-12 col-md-10 col-lg-6">
                             <!-- Section Heading -->
-                           {{--  <div class="section-heading text-center">
+                           <div class="section-heading text-center">
                                 <h2 class="text-capitalize">Financial News</h2>
                                 <p class="d-none d-sm-block mt-4">Online payment gateways cannot accept money directly from a bank account if it is not connected with debit-credit card/internet banking.</p>
                                 <p class="d-block d-sm-none mt-4">Current online banking system is highly dependent on NPSB by Bangladesh Bank (Not all the banks are connected yet)</p>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
 
-                    {{-- <div class="row justify-content-center" id="posts" data-wow-duration="2s"> --}}
+                     <div class="row justify-content-center" id="posts" data-wow-duration="2s">
 
                     </div>
 
@@ -557,7 +580,48 @@
                 </div>
             </section>
 
+                <div class="modal fade" id="modal-default" style="text-align:center;">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
 
+
+                        <div class="modal-body" style="padding-bottom: 20px">
+                          <div class="contentBox">
+                            <div id="imageBox"><button class="btn btn-sm" >X</button >
+                              <img  src="frontend/images/modal.png" alt="">
+
+                              </div>
+                              </div>
+                        </div>
+
+
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+
+<!-- Modal ProgressBar -->
+<div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="progressBarCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-body">
+  <div class="contentBox">
+    <div id="imageBox"> <button class="btn" style="color:white;">x</button >
+      <img  src="frontend/images/modal.png" alt="">
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+
+  <!-- <div id="overlay"></div> -->
+      <!-- /.modal -->
+
+        <!--====== Footer Area Start ======-->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="admin/assets/js/moment.js"></script>
@@ -593,4 +657,41 @@
         });
     });
 </script>
+
+
+<script>
+
+$(document).ready(function(){
+          $(".popup_data").hide();
+          $('#modal-default').click(function(){
+           if ($(".popup_data").css("display") == "none") {
+               $(".popup_data").show();
+            } else {
+               $(".popup_data").hide();
+            }
+          });
+        });
+        $(document).ready(function(){
+          var timeout;
+          $("#modal-default").click(function() {
+            if($('.popup_data ').is(':visible')){
+            timeout = startTimer();
+            }
+          $('body').on('focus', 'select', () => {
+           window.clearTimeout(timeout);
+          });
+          $('body').on('blur', 'select', () => {
+           window.clearTimeout(timeout);
+           timeout = startTimer();});
+          });
+});
+
+const startTimer = () => (
+ window.setTimeout(function(){
+ $('.popup_data ').stop().fadeOut('medium');
+ }, 3000)
+);
+</script>
+
+
 @endsection

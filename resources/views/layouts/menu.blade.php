@@ -23,32 +23,52 @@
             </li>
             <li class="{{ (Route::currentRouteName()=='backend-career.index')? 'ok' : '' }}"><a href="{{ route('backend-career.index') }}"><i class="fas fa-caret-right"></i> Career</a></li>
             <li class="submenu">
-              <a href="#"><i class='fas fa-file'></i> <span>Footer Sections</span> <span class="menu-arrow"></span></a>
+              <a href="{{ route('user.index')}}"><i class="fa fa-user" aria-hidden="true"></i> <span>User Management</span> </a>
               <ul style="display: none;">
-                <li><a href="{{ route('about.index')}}"> <i class="fas fa-caret-right"></i>About Us</a></li>
-                 <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Tearms & condition</a></li>
-                 <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Privacy Policy</a></li>
-                 <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Site Maps</a></li>
-                 <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Cookie Policy</a></li>
+                <li class="{{Route::currentRouteName()=='user.index' }}">
+                    <a href="{{ route('user.index')}}"><i class="fas fa-user"></i> <span> Users</span></a>
+
+                </li>
+                <li class="{{Route::currentRouteName()=='permission.index' }}">
+                <a href="{{ route('permission.index')}}"><i class="fas fa-user"></i> <span>Permission</span></a>
+
+                </li>
+                <li class="{{Route::currentRouteName()=='role.index' }}">
+                <a href="{{ route('role.index')}}"><i class="fas fa-user"></i> <span>Role</span></a>
+
+                </li>
 
 
               </ul>
           </li>
-          <li class="{{Route::currentRouteName()=='user.index' }}">
-              <a href="{{ route('user.index')}}"><i class="fas fa-user"></i> <span> Users</span></a>
-              <!-- <ul style="display: none;">
-                 <li><a href="{{ route('user.index')}}"> <i class="fas fa-caret-right"></i> All Users</a></li>
+            <li class="nav-item dropdown has-arrow" style="background-color:none;">
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="background-color:none;">
+                  <i class='fas fa-file'></i> <span>Footer Sections</span>
+              </a>
+
+                <ul class="dropdown-menu">
+                 <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('about.index')}}"> <i class="fas fa-caret-right"></i>About Us</a></li>
+                 <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Tearms & condition</a></li>
+                 <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Privacy Policy</a></li>
+                 <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Site Maps</a></li>
+                 <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Cookie Policy</a></li>
 
 
-              </ul> -->
-          </li>
+                </ul>
+            </li>
 
-          <li class="submenu">
-            <a href="#"><i class="fas fa-cog"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
-            <ul style="display: none;">
-               <li><a href="{{ url('/settings') }}"> <i class="fas fa-caret-right"></i>Social Icons</a></li>
-                <li><a href="{{ url('/settings-logo') }}"> <i class="fas fa-caret-right"></i>Logo</a></li>
-                <li><a href="{{ url('/settings-map') }}"> <i class="fas fa-caret-right"></i>Map</a></li>
+
+        <li class="nav-item dropdown has-arrow" style="background-color:none;">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="background-color:none;">
+
+                  <i class='fas fa-cog'></i> <span>Settings</span>
+          </a>
+
+            <ul class="dropdown-menu">
+             <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings') }}"> <i class="fas fa-caret-right"></i>Social </a></li>
+             <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings-logo') }}"> <i class="fas fa-caret-right"></i>Logo</a></li>
+             <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings-map') }}"> <i class="fas fa-caret-right"></i>Map</a></li>
+
 
             </ul>
         </li>
@@ -70,49 +90,68 @@
         <a href="{{route('menu.index')}}"><i class="fas fa-home"></i> <span>Nav Menu</span></a>
     </li>
     <li class="{{ (Route::currentRouteName()=='backend-career.index')? 'ok' : '' }}"><a href="{{ route('backend-career.index') }}"><i class="fas fa-caret-right"></i> Career</a></li>
-    <li class="submenu">
-    <a href="#"><i class='fas fa-file'></i> <span>Footer Sections</span> <span class="menu-arrow"></span></a>
-    <ul style="display: none;">
-    <li><a href="{{ route('about.index')}}"> <i class="fas fa-caret-right"></i>About Us</a></li>
-     <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Tearms & condition</a></li>
-     <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Privacy Policy</a></li>
-     <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Site Maps</a></li>
-     <li><a href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Cookie Policy</a></li>
+
+    <li class="nav-item dropdown has-arrow" style="background-color:none;">
+      <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="background-color:none;">
+          <i class='fas fa-file'></i> <span>Footer Sections</span>
+      </a>
+
+        <ul class="dropdown-menu">
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('about.index')}}"> <i class="fas fa-caret-right"></i>About Us</a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Tearms & condition</a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Privacy Policy</a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Site Maps</a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ route('feature.index')}}"> <i class="fas fa-caret-right"></i>Cookie Policy</a></li>
 
 
-    </ul>
-    </li>
-    <li class="{{Route::currentRouteName()=='user.index' }}">
-    <a href="{{ route('user.index')}}"><i class="fas fa-user"></i> <span> Users</span></a>
-    <!-- <ul style="display: none;">
-     <li><a href="{{ route('user.index')}}"> <i class="fas fa-caret-right"></i> All Users</a></li>
-
-
-    </ul> -->
+        </ul>
     </li>
 
-    <li class="submenu">
-    <a href="#"><i class="fas fa-cog"></i> <span> Settings</span> <span class="menu-arrow"></span></a>
-    <ul style="display: none;">
-    <li><a href="{{ url('/settings') }}"> <i class="fas fa-caret-right"></i>Social Icons</a></li>
-    <li><a href="{{ url('/settings-logo') }}"> <i class="fas fa-caret-right"></i>Logo</a></li>
-    <li><a href="{{ url('/settings-map') }}"> <i class="fas fa-caret-right"></i>Map</a></li>
 
-    </ul>
+
+    <li class="submenu">
+      <a href="{{ route('user.index')}}"><i class='fas fa-file'></i> <span>User Management</span> </a>
+      <ul style="display: none;">
+        <li class="{{Route::currentRouteName()=='user.index' }}">
+            <a href="{{ route('user.index')}}"><i class="fas fa-user"></i> <span> Users</span></a>
+
+        </li>
+        <li class="{{Route::currentRouteName()=='permission.index' }}">
+        <a href="{{ route('permission.index')}}"><i class="fas fa-user"></i> <span>Permission</span></a>
+
+        </li>
+        <li class="{{Route::currentRouteName()=='role.index' }}">
+        <a href="{{ route('role.index')}}"><i class="fas fa-user"></i> <span>Role</span></a>
+
+        </li>
+
+
+      </ul>
+  </li>
+
+
+
+    <li class="nav-item dropdown has-arrow" style="background-color:none;">
+      <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" style="background-color:none;">
+
+              <i class='fas fa-cog'></i> <span>Settings</span>
+      </a>
+
+        <ul class="dropdown-menu">
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings') }}"> <i class="fas fa-caret-right"></i>Social </a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings-logo') }}"> <i class="fas fa-caret-right"></i>Logo</a></li>
+         <li><a class="dropdown-item"  style="background-color:#0D6B4F;border:none;" href="{{ url('/settings-map') }}"> <i class="fas fa-caret-right"></i>Map</a></li>
+
+
+        </ul>
     </li>
 
      @endif
 
      @if ((Auth::user()->user_role == 'editor'))
-     <li class="submenu">
-        <a href="#"> <i class="fas fa-list-ul"></i><span> Posts</span> <span class="menu-arrow"></span></a>
-        <ul style="display: none;">
-            <li><a href="{{ route('post.index') }}"> <i class="fas fa-caret-right"></i> All Post</a></li>
-            <li><a href="{{ route('postCategory.index') }}"> <i class="fas fa-caret-right"></i> Categories</a></li>
-             <li><a href="{{ route('postTag.index') }}"> <i class="fas fa-caret-right"></i> Tags</a></li>
-
-        </ul>
-    </li>
+     <li class="{{ (Route::currentRouteName()=='backend-home.index')? 'ok' : '' }}">
+         <a href="{{route('backend-home.index')}}"><i class="fas fa-home"></i> <span>Home Page</span></a>
+     </li>
 
      @endif
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\user;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
-
+use DB;
+use Str;
 class UserManagement extends Controller
 {
     /**
@@ -13,16 +16,18 @@ class UserManagement extends Controller
      */
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+     function __construct(Permission $permission)
+         {
 
+                  $this->middleware('auth');
+         }
 
     public function index()
     {
+      $permissions= Permission::latest()->get();
         $all_data =user::all();
-        return view('layouts.user.index',compact('all_data'));
+        $role =Role::all();
+        return view('layouts.user.index',compact('all_data','permissions','role'));
     }
 
     /**
@@ -32,7 +37,9 @@ class UserManagement extends Controller
      */
     public function create()
     {
-        return view('layouts.user.create');
+        $permissions = Permission::get();
+        $role =Role::all();
+        return view('layouts.user.create',compact('permissions','role'));
     }
 
     /**
@@ -46,7 +53,7 @@ class UserManagement extends Controller
 
         $this -> validate($request,[
 
-            'name' => 'required',
+
             'email' => 'required',
             'phone' => 'required',
             'image'=>'required|image',
@@ -61,10 +68,12 @@ class UserManagement extends Controller
         {
             $user= user::create([
                 'name' => $request->name,
+                'super_name' => $request->super_name,
                 'email' => $request->email,
                 'phone' =>$request->phone,
                 'image'=>'image.png',
                 'user_role'=>$request->role,
+                 'user_id'=>$request->user_id,
                 'password' =>bcrypt($request->password)
             ]);
             if($request->has('image')){
@@ -164,4 +173,32 @@ class UserManagement extends Controller
 
           return redirect()->back()->with('delete','Data Deleted Successfully');
     }
+
+    function user_status_change($id)
+    {
+      //get product status with the help of product ID
+      $user = DB::table('users')
+            ->select('status')
+            ->where('id','=',$id)
+            ->first();
+
+      //Check user status
+      if($user->status == '1'){
+        $status = '0';
+      }else{
+        $status = '1';
+      }
+
+      //update product status
+      $values = array('status' => $status );
+      DB::table('users')->where('id',$id)->update($values);
+      //
+      // session()->flash('msg','Product status has been updated successfully.');
+      return redirect()->route('user.index');
+
+
+    }
+
+
+
 }

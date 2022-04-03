@@ -26,30 +26,20 @@
     <div class="body">
       <div class="row">
         <div class="col-sm-12">
-        <button type="button" class="btn btn-md btn-primary float-left d-inline " class="see" style="width:125px;height:45px; border-radius:12px;margin-right:5px;padding-top: 12px;
-        padding-left: 24px;">All</button>
-
-
-        <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:125px;height:45px; border-radius:12px;margin-right:5px;padding-top: 12px;
-        padding-left: 24px;">
-        Tecnical
-         </button>
-
-        <button type="" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:135px;height:45px; border-radius:12px;margin-right:5px;padding-top: 12px;
-        padding-left: 24px;">
-      Management
-    </button>
-
-      <?php
-         $mang = App\Models\CareerCategory::where('id','title')
-      ?>
-        <button type="submit" class="btn btn-md btn-primary float-left d-inline" class=" nav-link active" id="order" style="width:125px;height:45px; border-radius:12px;margin-right:5px;padding-top: 12px;
-        padding-left: 24px;">
-    Accounts
-         </button>
-
-
-
+        <a href="{{route('backend-career.index')}}" class="btn btn-md btn-primary float-left d-inline"style="background-color: #00d0f1;
+        border: 1px solid #00d0f1;
+        margin: 2px;
+border-radius: 10px;
+        width: 106px;">All</a>
+          @foreach($post_cat as $data)
+          <a href="{{url('career-view-category/'.$data->slug)}}" class="btn btn-md btn-primary float-left d-inline"
+        style="background-color: #00d0f1;
+        border: 1px solid #00d0f1;
+        margin: 2px;
+      border-radius: 10px;
+        width: 106px;">
+       {{ $data->name}}</a>
+       @endforeach
 </div>
       </div>
 
@@ -57,14 +47,16 @@
 
     <br><br>
 
-
+@can('career create')
     <h4 class="float-center d-inline"><a href="#add_career" class="btn btn-info" style="border-radius: 12px;" data-toggle="modal">Add New</a></h4>
+    @endcan
     <h4 class="float-center d-inline"><a href="{{route('careerCategory.index')}}" class="btn btn-info" style="border-radius: 12px;" data-toggle="">Add New Category</a></h4>
   <br>
   <br>
-    <div class="row">
 @foreach($all_data as $data)
-    <div class="col-md-10">
+<div class="row" >
+    <div class="col-md-12">
+
     <div class="profile-header"style="background-color:#FFFDE8;	border: 1px solid #F7E0A3; margin-right:12px;margin-bottom:10px;border-radius:12px;">
       <div class="row align-items-center">
         <div class="col ml-md-n2 profile-user-info" >
@@ -73,35 +65,48 @@
 
             <img class="rounded-circle" src="{{ asset($data->image) }}" width="3" height="2px;" alt="{{$data->alt_tag}}">
           </div>
+
           <h6 class="text-muted"style="font-size: 16px;color:#0D6B4F;">{{$data->title }}</h6>
           <hp class="text-muted">Easy Payment System</hp>
           <div class="about-text"><i i class="fa fa-map-marker" aria-hidden="true"style="padding-right:4px;color: #6565;"></i>{{$data->job_location }}</div>
           <div class="about-text"><i class="fa fa-graduation-cap "style="padding-right:4px;color: #6565;"></i>{{$data->educational_requirements }}</div>
           <div class="about-text"><i class="fas fa-user-alt "style="padding-right:4px;color: #6565;"></i>{{$data->additional_requirements}}</div>
 
-      <div class="about-text float-right "><i class="fa fa-graduation-cap"style="padding-right:4px;color: #6565;"></i>{{ $data->created_at->format('d M, Y') }}</div>
+      <div class="about-text float-right "><i class="fa fa-graduation-cap"style="padding-right:4px;color: #6565;"></i>published-on:{{ $data->created_at->format('d M, Y') }}</div>
 
     </div>
 
 
       </div>
     </div>
-    <div class="actions">
-
-     <a href="{{ route('backend-career.edit',$data->id) }}"  class="d-inline bg-primary-light" style="padding-top:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
 
 
-      <form action="{{ route('backend-career.destroy', $data->id) }}" method="POST" class=" d-inline">
-  @include('validate')
-          @method('delete')
-              @csrf
-      <button style="border-radius:4px; background-color:#218838;color:#fff" class="  del_button" data-toggle="tooltip" title="" ><i class="fas fa-times-circle"></i>Delete</button>
-      </form>
-    </div>
+    {{--<a href="{{url('backend-career/'.$data->id)}}" class="btn btn-md btn-primary float-left d-inline"
+  style="background-color: #00d0f1;
+  border: 1px solid #00d0f1;
+  margin: 2px;
+border-radius: 10px;
+  width: 106px;">
+ view</a>--}}
+ <div class="actions">
+  @can('career edit')
+  <a href="{{ route('backend-career.edit',$data->id) }}"  class="d-inline bg-primary-light" style="padding-top:5px;"  data-toggle="tooltip modal" data-toggle="modal" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i>Edit</a>
+@endcan
+@can('career delete')
+   <form action="{{ route('backend-career.destroy', $data->id) }}" method="POST" class=" d-inline">
+@include('validate')
+       @method('delete')
+           @csrf
+   <button style="border-radius:4px; background-color:#218838;color:#fff" class="  del_button" data-toggle="tooltip" title="" ><i class="fas fa-times-circle"></i>Delete</button>
+   </form>
+   @endcan
+ </div>
+
+
 <br><br>
     </div>
+  </div>
 @endforeach
-    </div>
   </div>
     <!-- // MOdel for Menu Create!-->
     <!-- Add Modal -->
@@ -202,6 +207,23 @@
                           <div class="form-group">
                             <label>  salary</label>
                             <input type="text" name="  salary" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-6 col-sm-6" >
+                          <div class="form-group">
+                            <label>deadline</label>
+                            <input type="text" name="deadline" class="form-control">
+                          </div>
+                        </div>
+                        <div class="col-6 col-sm-6" >
+                          <div class="form-group">
+                              <label>  Job Category</label>
+                              <select name="category" id="category" class="form-control">
+                                  <option value="" style="display: none" selected>Select Category</option>
+                                  @foreach($post_cat as $c)
+                                  <option value="{{ $c->id }}"> {{ $c->name }} </option>
+                                  @endforeach
+                              </select>
                           </div>
                         </div>
 
